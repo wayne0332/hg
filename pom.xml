@@ -89,6 +89,18 @@
             <artifactId>hibernate-validator</artifactId>
             <version>5.1.2.Final</version>
         </dependency>
+        <dependency>
+            <groupId>javax.el</groupId>
+            <artifactId>javax.el-api</artifactId>
+            <version>3.0.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.el</artifactId>
+            <version>3.0.0</version>
+            <scope>test</scope>
+        </dependency>
         <!--hibernate validator-->
         <!--freemarker-->
         <dependency>
@@ -204,33 +216,26 @@
                         <artifactId>mysql-connector-java</artifactId>
                         <version>${mysqlVersion}</version>
                     </dependency>
-                    <!--<dependency>-->
-                        <!--<groupId>cn.hg</groupId>-->
-                        <!--<artifactId>web</artifactId>-->
-                    <!--</dependency>-->
                 </dependencies>
 
                 <configuration>
                     <jdbc>
                         <driver>com.mysql.jdbc.Driver</driver>
-                        <url>jdbc:mysql://localhost:3306/test</url>
+                        <url>jdbc:mysql://localhost:3306/hg</url>
                         <user>root</user>
                         <password>root</password>
                     </jdbc>
 
                     <generator>
                         <name>org.jooq.util.JavaGenerator</name>
-                        <!--<strategy>-->
-                            <!--<name>cn.hg.util.JooqGeneratorStrategy</name>-->
-                        <!--</strategy>-->
                         <database>
                             <name>org.jooq.util.mysql.MySQLDatabase</name>
-                            <inputSchema>test</inputSchema>
+                            <inputSchema>hg</inputSchema>
                             <includes>.*</includes>
                         </database>
                         <target>
                             <packageName>cn.hg.jooq</packageName>
-                            <directory>/Users/Jason/work/hg/hg/src/main/java</directory>
+                            <directory>/Users/Jason/work/hg/src/main/java</directory>
                         </target>
                     </generator>
                 </configuration>

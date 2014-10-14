@@ -1,30 +1,34 @@
 package cn.hg.test;
 
+import cn.hg.test.service.TestService;
 import org.jooq.DSLContext;
-import org.jooq.SQLDialect;
-import org.jooq.impl.DSL;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
+import javax.annotation.Resource;
 
+import static cn.hg.jooq.Tables.MANAGER;
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration({"classpath:spring-config.xml", "classpath:spring-database.xml"})
 public class TestApp
 {
-	@Test
-	public void testQuery()
-	{
-		String userName = "root";
-		String password = "root";
-		String url = "jdbc:mysql://localhost:3306/test";
-		try(Connection conn = DriverManager.getConnection(url, userName, password)) {
-			DSLContext create = DSL.using(conn, SQLDialect.MYSQL);
-			System.out.println(create.select().from("t_user").getSQL());
-			for (String s : create.selectFrom(cn.hg.jooq.tables.Test.TEST).fetch(cn.hg.jooq.tables.Test.TEST.NAME))
-			{
-				System.out.println(s);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+    @Resource
+    private DSLContext dsl;
+
+    @Resource
+    private TestService testService;
+
+    @Test
+    public void testQuery() {
+        System.out.println(dsl.selectFrom(MANAGER).where(MANAGER.NAME.equal("admin")).fetchOne().getName());
+    }
+
+    @Test
+    public void testParam() {
+        testService.test("test");
+        testService.test(null);
+    }
 }

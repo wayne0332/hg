@@ -114,6 +114,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.14.8</version>
+            <scope>provided</scope>
         </dependency>
         <!--lombok-->
         <!--junit4-->
@@ -202,6 +203,13 @@
             <version>${mysqlVersion}</version>
         </dependency>
         <!--jdbc-->
+        <!--java melody-->
+        <dependency>
+            <groupId>net.bull.javamelody</groupId>
+            <artifactId>javamelody-core</artifactId>
+            <version>1.50.0</version>
+        </dependency>
+        <!--java melody-->
     </dependencies>
     <build>
         <plugins>
@@ -228,6 +236,7 @@
 
                     <generator>
                         <name>org.jooq.util.JavaGenerator</name>
+                        <pojos>false</pojos>
                         <database>
                             <name>org.jooq.util.mysql.MySQLDatabase</name>
                             <inputSchema>hg</inputSchema>

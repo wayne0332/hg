@@ -1,4 +1,4 @@
-package cn.hg.exception;
+package cn.hg.extend.jooq;
 
 import org.jooq.ExecuteContext;
 import org.jooq.SQLDialect;

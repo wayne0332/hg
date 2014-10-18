@@ -24,7 +24,6 @@ public class MainController
 	@RequestMapping("/")
 	public ModelAndView main()
 	{
-		LOGGER.info("test");
 		return new ModelAndView("main").addObject("test", dsl.selectFrom(MANAGER).where(MANAGER.NAME.equal("admin")).fetchOne(MANAGER.PASSWORD));
 	}
 

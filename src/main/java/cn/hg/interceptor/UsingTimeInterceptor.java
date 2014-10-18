@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 public class UsingTimeInterceptor {
 	private static final Logger LOGGER = LoggerFactory.getLogger(UsingTimeInterceptor.class);
 
-	@Around("execution(public * cn.hg.controller.*.*(..))")
+	@Around("@annotation(org.springframework.web.bind.annotation.RequestMapping) && execution(public * cn.hg.controller.*.*(..))")
 	public Object calculateUsingTime(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
 		long startTime = System.currentTimeMillis();
 		Object result = proceedingJoinPoint.proceed();

@@ -35,11 +35,11 @@
     </bean>
 
     <!-- Configure the DSL object, optionally overriding jOOQ Exceptions with Spring Exceptions -->
-    <bean id="dsl" class="org.jooq.impl.DefaultDSLContext">
+    <bean id="dsl" class="cn.hg.extend.jooq.CustomDslContext">
         <constructor-arg ref="config" />
     </bean>
 
-    <bean id="exceptionTranslator" class="cn.hg.exception.JooqExceptionTranslator" />
+    <bean id="exceptionTranslator" class="cn.hg.extend.jooq.JooqExceptionTranslator" />
 
     <!-- Invoking an internal, package-private constructor for the example
          Implement your own Configuration for more reliable behaviour -->

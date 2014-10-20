@@ -5,26 +5,26 @@
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 <title>武汉汇海天下广告有限责任公司</title>
 
-<script type="text/javascript" src="js/4ce26076e427402e8daf3118ab8b3174.js"></script>
-<script type="text/javascript" src="js/searchinfowindow_min.js"></script>
-<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="js/slide.js"></script>
-<script type="text/javascript" src="js/common.js"></script>
-<script type="text/javascript" src="js/jwplayer.js"></script>
-<link rel="shortcut icon" type="image/x-icon" href="picture/32X32ico.ico" >
+<script type="text/javascript" src="../../../js/4ce26076e427402e8daf3118ab8b3174.js"></script>
+<script type="text/javascript" src="../../../js/searchinfowindow_min.js"></script>
+<script type="text/javascript" src="../../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../../js/slide.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/jwplayer.js"></script>
+<link rel="shortcut icon" type="image/x-icon" href="../../../picture/32X32ico.ico" >
 
 
-<link rel="stylesheet" href="css/searchinfowindow_min.css" />
-<link type="text/css" href="css/api.css" rel="stylesheet" />
+<link rel="stylesheet" href="../../../css/searchinfowindow_min.css" />
+<link type="text/css" href="../../../css/api.css" rel="stylesheet" />
 
 
 
-<link type="text/css" href="css/style_1.css" rel="stylesheet" />
+<link type="text/css" href="../../../css/style_1.css" rel="stylesheet" />
 
-<link rel="stylesheet" href="css/responsiveslides.css">
+<link rel="stylesheet" href="../../../css/responsiveslides.css">
 
-<link rel="stylesheet" href="css/style3.css">
-<script type="text/javascript" src="js/responsiveslides.min.js"></script>
+<link rel="stylesheet" href="../../../css/style3.css">
+<script type="text/javascript" src="../../../js/responsiveslides.min.js"></script>
 <script type="text/javascript">
 function autoScroll() {
 	var indexScroll = document.getElementById('indexScroll');
@@ -203,27 +203,27 @@ $(function () {
     <div class="callbacks_container">
 		<ul class="rslides" id="slider4">
 			<li>
-				<img src="images/钣金车间.jpg" alt="" style="height:233px;">
+				<img src="../../../images/钣金车间.jpg" alt="" style="height:233px;">
 				<p class="caption">钣金车间</p>
 			</li>
 			<li>
-				<img src="images/包装车间.jpg" alt="" style="height:233px;">
+				<img src="../../../images/包装车间.jpg" alt="" style="height:233px;">
 				<p class="caption">包装车间</p>
 			</li>
 			<li>
-				<img src="images/雕刻车间.jpg" alt="" style="height:233px;">
+				<img src="../../../images/雕刻车间.jpg" alt="" style="height:233px;">
 				<p class="caption">雕刻车间</p>
 			</li>
 			<li>
-				<img src="images/吊装车间.jpg" alt="" style="height:233px;">
+				<img src="../../../images/吊装车间.jpg" alt="" style="height:233px;">
 				<p class="caption">吊装车间</p>
 			</li>
 			<li>
-				<img src="images/激光雕刻车间.jpg" alt="" style="height:233px;">
+				<img src="../../../images/激光雕刻车间.jpg" alt="" style="height:233px;">
 				<p class="caption">激光雕刻车间</p>
 			</li>
 			<li>
-				<img src="images/喷印车间.jpg" alt="" style="height:233px;">
+				<img src="../../../images/喷印车间.jpg" alt="" style="height:233px;">
 				<p class="caption">喷印车间</p>
 			</li>
 		</ul>
@@ -252,7 +252,7 @@ $(function () {
         
                     <ul>
                                  <li>
-                <img src="picture/52bd10890a.png" />
+                <img src="../../../picture/52bd10890a.png" />
                 
                                 
                                 <div class="mask-box">
@@ -261,14 +261,14 @@ $(function () {
                                         <div class="next" class="next"></div>
                                         <ul class="tFocus-pic">
                                                                                         <li> <a href="#"> <img src="picture/52cd269f079.jpg" alt="00" /> </a> <div href="#" class="gray_box">雪弗兰</div> </li>
-                                                                                        <li> <a href="#"> <img src="picture/52cd26b1079.jpg" alt="00" /> </a> <div href="#" class="gray_box">雪弗兰2</div> </li>
+                                                                                        <li> <a href="#"> <img src="../../../picture/52cd26b1079.jpg" alt="00" /> </a> <div href="#" class="gray_box">雪弗兰2</div> </li>
                                                                                     </ul>
                                         <div class="tFocusBtn">
                                             <a href="javascript:void(0);" class="prev_ tFocus-leftbtn">上一张</a>
                                             <div class="tFocus-btn">
                                                 <ul>
                                                                                                         <li class="active"><img src="picture/52cd269f079.jpg" alt="00" /></li>
-                                                                                                        <li ><img src="picture/52cd26b1079.jpg" alt="00" /></li>
+                                                                                                        <li ><img src="../../../picture/52cd26b1079.jpg" alt="00" /></li>
                                                                                                     </ul>
                                             </div>
                                             <a href="javascript:void(0);" class="next_ tFocus-rightbtn">下一张</a>
@@ -291,19 +291,19 @@ $(function () {
                                         <div class="prev" class="prev"></div>
                                         <div class="next" class="next"></div>
                                         <ul class="tFocus-pic">
-                                                                                        <li> <a href="#"> <img src="picture/52be75c10a.png" alt="00" /> </a> <div href="#" class="gray_box">悦达起亚</div> </li>
-                                                                                        <li> <a href="#"> <img src="picture/52be76aa0a.png" alt="00" /> </a> <div href="#" class="gray_box">悦达起亚</div> </li>
-                                                                                        <li> <a href="#"> <img src="picture/52be77060a.png" alt="00" /> </a> <div href="#" class="gray_box">悦达起亚</div> </li>
-                                                                                        <li> <a href="#"> <img src="picture/52be771b0a.png" alt="00" /> </a> <div href="#" class="gray_box">悦达起亚</div> </li>
+                                                                                        <li> <a href="#"> <img src="../../../picture/52be75c10a.png" alt="00" /> </a> <div href="#" class="gray_box">悦达起亚</div> </li>
+                                                                                        <li> <a href="#"> <img src="../../../picture/52be76aa0a.png" alt="00" /> </a> <div href="#" class="gray_box">悦达起亚</div> </li>
+                                                                                        <li> <a href="#"> <img src="../../../picture/52be77060a.png" alt="00" /> </a> <div href="#" class="gray_box">悦达起亚</div> </li>
+                                                                                        <li> <a href="#"> <img src="../../../picture/52be771b0a.png" alt="00" /> </a> <div href="#" class="gray_box">悦达起亚</div> </li>
                                                                                     </ul>
                                         <div class="tFocusBtn">
                                             <a href="javascript:void(0);" class="prev_ tFocus-leftbtn">上一张</a>
                                             <div class="tFocus-btn">
                                                 <ul>
-                                                                                                        <li class="active"><img src="picture/52be75c10a.png" alt="00" /></li>
-                                                                                                        <li ><img src="picture/52be76aa0a.png" alt="00" /></li>
-                                                                                                        <li ><img src="picture/52be77060a.png" alt="00" /></li>
-                                                                                                        <li ><img src="picture/52be771b0a.png" alt="00" /></li>
+                                                                                                        <li class="active"><img src="../../../picture/52be75c10a.png" alt="00" /></li>
+                                                                                                        <li ><img src="../../../picture/52be76aa0a.png" alt="00" /></li>
+                                                                                                        <li ><img src="../../../picture/52be77060a.png" alt="00" /></li>
+                                                                                                        <li ><img src="../../../picture/52be771b0a.png" alt="00" /></li>
                                                                                                     </ul>
                                             </div>
                                             <a href="javascript:void(0);" class="next_ tFocus-rightbtn">下一张</a>
@@ -318,7 +318,7 @@ $(function () {
                 <div class="mask"></div>
             </li>
                                     <li>
-                <img src="picture/52bd109e0a.png" />
+                <img src="../../../picture/52bd109e0a.png" />
                 
                                 
                                 <div class="mask-box">
@@ -326,19 +326,19 @@ $(function () {
                                         <div class="prev" class="prev"></div>
                                         <div class="next" class="next"></div>
                                         <ul class="tFocus-pic">
-                                                                                        <li> <a href="#"> <img src="picture/52cd2760079.jpg" alt="00" /> </a> <div href="#" class="gray_box">天津站LED</div> </li>
-                                                                                        <li> <a href="#"> <img src="picture/52cd279b079.jpg" alt="00" /> </a> <div href="#" class="gray_box">北京南站LED</div> </li>
-                                                                                        <li> <a href="#"> <img src="picture/52cd27b0079.jpg" alt="00" /> </a> <div href="#" class="gray_box">武汉站LED</div> </li>
-                                                                                        <li> <a href="#"> <img src="picture/52cd27c3079.jpg" alt="00" /> </a> <div href="#" class="gray_box">广州南站LED</div> </li>
+                                                                                        <li> <a href="#"> <img src="../../../picture/52cd2760079.jpg" alt="00" /> </a> <div href="#" class="gray_box">天津站LED</div> </li>
+                                                                                        <li> <a href="#"> <img src="../../../picture/52cd279b079.jpg" alt="00" /> </a> <div href="#" class="gray_box">北京南站LED</div> </li>
+                                                                                        <li> <a href="#"> <img src="../../../picture/52cd27b0079.jpg" alt="00" /> </a> <div href="#" class="gray_box">武汉站LED</div> </li>
+                                                                                        <li> <a href="#"> <img src="../../../picture/52cd27c3079.jpg" alt="00" /> </a> <div href="#" class="gray_box">广州南站LED</div> </li>
                                                                                     </ul>
                                         <div class="tFocusBtn">
                                             <a href="javascript:void(0);" class="prev_ tFocus-leftbtn">上一张</a>
                                             <div class="tFocus-btn">
                                                 <ul>
-                                                                                                        <li class="active"><img src="picture/52cd2760079.jpg" alt="00" /></li>
-                                                                                                        <li ><img src="picture/52cd279b079.jpg" alt="00" /></li>
-                                                                                                        <li ><img src="picture/52cd27b0079.jpg" alt="00" /></li>
-                                                                                                        <li ><img src="picture/52cd27c3079.jpg" alt="00" /></li>
+                                                                                                        <li class="active"><img src="../../../picture/52cd2760079.jpg" alt="00" /></li>
+                                                                                                        <li ><img src="../../../picture/52cd279b079.jpg" alt="00" /></li>
+                                                                                                        <li ><img src="../../../picture/52cd27b0079.jpg" alt="00" /></li>
+                                                                                                        <li ><img src="../../../picture/52cd27c3079.jpg" alt="00" /></li>
                                                                                                     </ul>
                                             </div>
                                             <a href="javascript:void(0);" class="next_ tFocus-rightbtn">下一张</a>
@@ -361,15 +361,15 @@ $(function () {
                                         <div class="prev" class="prev"></div>
                                         <div class="next" class="next"></div>
                                         <ul class="tFocus-pic">
-                                                                                        <li> <a href="#"> <img src="picture/52be7bea0a.png" alt="00" /> </a> <div href="#" class="gray_box">上海通用五菱</div> </li>
-                                                                                        <li> <a href="#"> <img src="picture/52be7c030a.png" alt="00" /> </a> <div href="#" class="gray_box">上海通用五菱</div> </li>
+                                                                                        <li> <a href="#"> <img src="../../../picture/52be7bea0a.png" alt="00" /> </a> <div href="#" class="gray_box">上海通用五菱</div> </li>
+                                                                                        <li> <a href="#"> <img src="../../../picture/52be7c030a.png" alt="00" /> </a> <div href="#" class="gray_box">上海通用五菱</div> </li>
                                                                                     </ul>
                                         <div class="tFocusBtn">
                                             <a href="javascript:void(0);" class="prev_ tFocus-leftbtn">上一张</a>
                                             <div class="tFocus-btn">
                                                 <ul>
-                                                                                                        <li class="active"><img src="picture/52be7bea0a.png" alt="00" /></li>
-                                                                                                        <li ><img src="picture/52be7c030a.png" alt="00" /></li>
+                                                                                                        <li class="active"><img src="../../../picture/52be7bea0a.png" alt="00" /></li>
+                                                                                                        <li ><img src="../../../picture/52be7c030a.png" alt="00" /></li>
                                                                                                     </ul>
                                             </div>
                                             <a href="javascript:void(0);" class="next_ tFocus-rightbtn">下一张</a>
@@ -384,7 +384,7 @@ $(function () {
                 <div class="mask"></div>
             </li>
                                     <li>
-                <img src="picture/52bd10e80a.png" />
+                <img src="../../../picture/52bd10e80a.png" />
                 
                                 
                                 <div class="mask-box">
@@ -392,13 +392,13 @@ $(function () {
                                         <div class="prev" class="prev"></div>
                                         <div class="next" class="next"></div>
                                         <ul class="tFocus-pic">
-                                                                                        <li> <a href="#"> <img src="picture/52be77eb0a.png" alt="00" /> </a> <div href="#" class="gray_box">东风日产</div> </li>
+                                                                                        <li> <a href="#"> <img src="../../../picture/52be77eb0a.png" alt="00" /> </a> <div href="#" class="gray_box">东风日产</div> </li>
                                                                                     </ul>
                                         <div class="tFocusBtn">
                                             <a href="javascript:void(0);" class="prev_ tFocus-leftbtn">上一张</a>
                                             <div class="tFocus-btn">
                                                 <ul>
-                                                                                                        <li class="active"><img src="picture/52be77eb0a.png" alt="00" /></li>
+                                                                                                        <li class="active"><img src="../../../picture/52be77eb0a.png" alt="00" /></li>
                                                                                                     </ul>
                                             </div>
                                             <a href="javascript:void(0);" class="next_ tFocus-rightbtn">下一张</a>
@@ -413,7 +413,7 @@ $(function () {
                 <div class="mask"></div>
             </li>
                                     <li>
-                <img src="picture/52bd10fd0a.png" />
+                <img src="../../../picture/52bd10fd0a.png" />
                 
                                 
                                 <div class="mask-box">
@@ -421,14 +421,14 @@ $(function () {
                                         <div class="prev" class="prev"></div>
                                         <div class="next" class="next"></div>
                                         <ul class="tFocus-pic">
-                                                                                        <li> <a href="#"> <img src="picture/52cd2a14079.jpg" alt="00" /> </a> <div href="#" class="gray_box">LED</div> </li>
+                                                                                        <li> <a href="#"> <img src="../../../picture/52cd2a14079.jpg" alt="00" /> </a> <div href="#" class="gray_box">LED</div> </li>
                                                                                         <li> <a href="#"> <img src="picture/52cd2a21079.jpg" alt="00" /> </a> <div href="#" class="gray_box">LED</div> </li>
                                                                                     </ul>
                                         <div class="tFocusBtn">
                                             <a href="javascript:void(0);" class="prev_ tFocus-leftbtn">上一张</a>
                                             <div class="tFocus-btn">
                                                 <ul>
-                                                                                                        <li class="active"><img src="picture/52cd2a14079.jpg" alt="00" /></li>
+                                                                                                        <li class="active"><img src="../../../picture/52cd2a14079.jpg" alt="00" /></li>
                                                                                                         <li ><img src="picture/52cd2a21079.jpg" alt="00" /></li>
                                                                                                     </ul>
                                             </div>
@@ -444,7 +444,7 @@ $(function () {
                 <div class="mask"></div>
             </li>
                                     <li>
-                <img src="picture/52bd11110a.png" />
+                <img src="../../../picture/52bd11110a.png" />
                 
                                 
                                 <div class="mask-box">
@@ -471,7 +471,7 @@ $(function () {
                 <div class="mask"></div>
             </li>
                                     <li>
-                <img src="picture/52bd12f70a.png" />
+                <img src="../../../picture/52bd12f70a.png" />
                 
                                 
                                 <div class="mask-box">
@@ -480,16 +480,16 @@ $(function () {
                                         <div class="next" class="next"></div>
                                         <ul class="tFocus-pic">
                                                                                         <li> <a href="#"> <img src="picture/52d3a48d079.jpg" alt="00" /> </a> <div href="#" class="gray_box">国窖1573</div> </li>
-                                                                                        <li> <a href="#"> <img src="picture/52d3a4c4079.jpg" alt="00" /> </a> <div href="#" class="gray_box">国窖15731</div> </li>
-                                                                                        <li> <a href="#"> <img src="picture/52d3a4e4079.jpg" alt="00" /> </a> <div href="#" class="gray_box">国窖2</div> </li>
+                                                                                        <li> <a href="#"> <img src="../../../picture/52d3a4c4079.jpg" alt="00" /> </a> <div href="#" class="gray_box">国窖15731</div> </li>
+                                                                                        <li> <a href="#"> <img src="../../../picture/52d3a4e4079.jpg" alt="00" /> </a> <div href="#" class="gray_box">国窖2</div> </li>
                                                                                     </ul>
                                         <div class="tFocusBtn">
                                             <a href="javascript:void(0);" class="prev_ tFocus-leftbtn">上一张</a>
                                             <div class="tFocus-btn">
                                                 <ul>
                                                                                                         <li class="active"><img src="picture/52d3a48d079.jpg" alt="00" /></li>
-                                                                                                        <li ><img src="picture/52d3a4c4079.jpg" alt="00" /></li>
-                                                                                                        <li ><img src="picture/52d3a4e4079.jpg" alt="00" /></li>
+                                                                                                        <li ><img src="../../../picture/52d3a4c4079.jpg" alt="00" /></li>
+                                                                                                        <li ><img src="../../../picture/52d3a4e4079.jpg" alt="00" /></li>
                                                                                                     </ul>
                                             </div>
                                             <a href="javascript:void(0);" class="next_ tFocus-rightbtn">下一张</a>
@@ -507,7 +507,7 @@ $(function () {
         </ul> 
                         <ul>
                                  <li>
-                <img src="picture/52bd13dc0a.png" />
+                <img src="../../../picture/52bd13dc0a.png" />
                 
                                 
                                 <div class="mask-box">
@@ -534,7 +534,7 @@ $(function () {
                 <div class="mask"></div>
             </li>
                                     <li>
-                <img src="picture/52bd15a10a.png" />
+                <img src="../../../picture/52bd15a10a.png" />
                 
                                 
                                 <div class="mask-box">
@@ -561,7 +561,7 @@ $(function () {
                 <div class="mask"></div>
             </li>
                                     <li>
-                <img src="picture/52bd16a50a.png" />
+                <img src="../../../picture/52bd16a50a.png" />
                 
                                 
                                 <div class="mask-box">
@@ -615,7 +615,7 @@ $(function () {
                 <div class="mask"></div>
             </li>
                                     <li>
-                <img src="picture/52bd19ea0a.png" />
+                <img src="../../../picture/52bd19ea0a.png" />
                 
                                 
                                 <div class="mask-box">
@@ -646,7 +646,7 @@ $(function () {
                 <div class="mask"></div>
             </li>
                                     <li>
-                <img src="picture/52cd182d079.jpg" />
+                <img src="../../../picture/52cd182d079.jpg" />
                 
                                 
                                 <div class="mask-box">
@@ -654,13 +654,13 @@ $(function () {
                                         <div class="prev" class="prev"></div>
                                         <div class="next" class="next"></div>
                                         <ul class="tFocus-pic">
-                                                                                        <li> <a href="#"> <img src="picture/52cd26f7079.jpg" alt="00" /> </a> <div href="#" class="gray_box">东风标致</div> </li>
+                                                                                        <li> <a href="#"> <img src="../../../picture/52cd26f7079.jpg" alt="00" /> </a> <div href="#" class="gray_box">东风标致</div> </li>
                                                                                     </ul>
                                         <div class="tFocusBtn">
                                             <a href="javascript:void(0);" class="prev_ tFocus-leftbtn">上一张</a>
                                             <div class="tFocus-btn">
                                                 <ul>
-                                                                                                        <li class="active"><img src="picture/52cd26f7079.jpg" alt="00" /></li>
+                                                                                                        <li class="active"><img src="../../../picture/52cd26f7079.jpg" alt="00" /></li>
                                                                                                     </ul>
                                             </div>
                                             <a href="javascript:void(0);" class="next_ tFocus-rightbtn">下一张</a>

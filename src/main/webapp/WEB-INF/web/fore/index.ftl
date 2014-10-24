@@ -28,7 +28,7 @@
 <script type="text/javascript">
 function autoScroll() {
 	var indexScroll = document.getElementById('indexScroll');
-	if(indexScroll.scrollTop == indexScroll.scrollHeight/3) {
+	if(indexScroll.scrollTop > indexScroll.scrollHeight*2/8) {
 		indexScroll.scrollTop = 0;
 	}
 	indexScroll.scrollTop++;
@@ -58,103 +58,9 @@ $(function () {
 	</style>
 </head>
 <body>
-
-<!-- 整站头部部分 start -->
-<div id="topline"></div>
-
-<!-- 主导航 -->
-<div id="mainnav">
-      <div id="logo" style="margin-top:14px;"><a href="/"><img src="picture/logo.png" /></a></div>
-        <div class="right">
-     
-                    
-            <div id="nav" style="margin-top:77px;">
-                <ul class="n-list">
-                    
-                                                
-                                                
-                             <li><a href="/index.php/52a97b8a07f">首页</a></li>
-                            
-                                                
-                                                
-                                                
-                            <li><a href="/index.php/52aa7aff07f">关于我们</a></li>
-                            
-                                                
-                                                
-                                                
-                            <li><a href="/index.php/52abbb3607f">实力展示</a></li>
-                            
-                                                
-                                                
-                                                
-                            <li><a href="/index.php/52b432e507f">真实案例</a></li>
-                            
-                                                
-                                                
-                                                
-                                                
-                            <li><a href="/index.php/52afbc6d07f">联系我们</a></li>
-                            
-                                                
-                                                
-                                                
-                            <li class="nav_last"><a href="/index.php/52aedcc907f">加入我们</a></li>
-                            
-                                                
-                                            
-                </ul>
-            </div>
-
-            <div id="nav_list" class="nav_list">
-                <ul class="f-list">
-                    <li>
-                        <ul class="inner">
-                        </ul>
-                    </li>
-                    <li>
-                        <ul class="inner">
-                            <li><a href="/index.php/52aa7aff07f">公司简介</a></li>
-                            <li><a href="/index.php/52aa7f9707f">发展历程</a></li>
-                            <li><a href="/index.php/52aaa41c07f">服务客户</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <ul class="inner">
-                            <li><a href="/index.php/52abbb3607f">实力展示1</a></li>
-                            <li><a href="/index.php/52aab8da07f">实力展示1</a></li>
-                            <li><a href="/activity.php/">实力展示1</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <ul class="inner">
-                            <li><a href="/index.php/52b432e507f">真实案例1</a></li>
-                            <li><a href="/index.php/52aec02607f">真实案例1</a></li>
-                            <li><a href="/index.php/52aec42d07f">真实案例1</a></li>
-                            <li><a href="/index.php/52aec57d07f">真实案例1</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <ul class="inner">
-                        </ul>
-                    </li>
-                    <li>
-                        <ul class="inner">
-                            <li><a href="/index.php/52afbc6d07f">联系我们</a></li>
-                            <li><a href="/index.php/52aed92007f">联系我们</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <ul class="inner">
-                            <li><a href="/index.php/52aedcc907f">人才招聘</a></li>
-                            <li><a href="/index.php/52aedff207f">留言</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-</div>
-
+<!--导入头部导航-->
+<#include "topbar.ftl">
+<!--导入头部导航 end-->
 
     <!--通栏轮播图-->
      
@@ -203,27 +109,27 @@ $(function () {
     <div class="callbacks_container">
 		<ul class="rslides" id="slider4">
 			<li>
-				<img src="../../../images/钣金车间.jpg" alt="" style="height:233px;">
+				<img src="../../../images/banjinchejian.jpg" alt="" style="height:233px;">
 				<p class="caption">钣金车间</p>
 			</li>
 			<li>
-				<img src="../../../images/包装车间.jpg" alt="" style="height:233px;">
+				<img src="../../../images/baozhuangchejian.jpg" alt="" style="height:233px;">
 				<p class="caption">包装车间</p>
 			</li>
 			<li>
-				<img src="../../../images/雕刻车间.jpg" alt="" style="height:233px;">
+				<img src="../../../images/diaokechejian.jpg" alt="" style="height:233px;">
 				<p class="caption">雕刻车间</p>
 			</li>
 			<li>
-				<img src="../../../images/吊装车间.jpg" alt="" style="height:233px;">
+				<img src="../../../images/diaozhuangchejian.jpg" alt="" style="height:233px;">
 				<p class="caption">吊装车间</p>
 			</li>
 			<li>
-				<img src="../../../images/激光雕刻车间.jpg" alt="" style="height:233px;">
+				<img src="../../../images/jiguangdiaokechejian.jpg" alt="" style="height:233px;">
 				<p class="caption">激光雕刻车间</p>
 			</li>
 			<li>
-				<img src="../../../images/喷印车间.jpg" alt="" style="height:233px;">
+				<img src="../../../images/penyinchejian.jpg" alt="" style="height:233px;">
 				<p class="caption">喷印车间</p>
 			</li>
 		</ul>
@@ -252,7 +158,7 @@ $(function () {
         
                     <ul>
                                  <li>
-                <img src="../../../picture/52bd10890a.png" />
+                <img src="example/logo/guangdianlogo.jpg" />
                 
                                 
                                 <div class="mask-box">
@@ -260,15 +166,17 @@ $(function () {
                                         <div class="prev" class="prev"></div>
                                         <div class="next" class="next"></div>
                                         <ul class="tFocus-pic">
-                                                                                        <li> <a href="#"> <img src="picture/52cd269f079.jpg" alt="00" /> </a> <div href="#" class="gray_box">雪弗兰</div> </li>
-                                                                                        <li> <a href="#"> <img src="../../../picture/52cd26b1079.jpg" alt="00" /> </a> <div href="#" class="gray_box">雪弗兰2</div> </li>
+                                                                                        <li> <a href="#"> <img src="example/guangdiandichan/13.jpg" alt="00" /> </a> <div href="#" class="gray_box">广电地产</div> </li>
+                                                                                        <li> <a href="#"> <img src="example/guangdiandichan/15.jpg" alt="00" /> </a> <div href="#" class="gray_box">广电地产</div> </li>
+																						 <li> <a href="#"> <img src="example/guangdiandichan/16.jpg" alt="00" /> </a> <div href="#" class="gray_box">广电地产</div> </li>
                                                                                     </ul>
                                         <div class="tFocusBtn">
                                             <a href="javascript:void(0);" class="prev_ tFocus-leftbtn">上一张</a>
                                             <div class="tFocus-btn">
                                                 <ul>
-                                                                                                        <li class="active"><img src="picture/52cd269f079.jpg" alt="00" /></li>
-                                                                                                        <li ><img src="../../../picture/52cd26b1079.jpg" alt="00" /></li>
+                                                                                                        <li class="active"><img src="example/guangdiandichan/13.jpg" alt="00" /></li>
+                                                                                                        <li ><img src="example/guangdiandichan/15.jpg" alt="00" /></li>
+																										 <li ><img src="example/guangdiandichan/16.jpg" alt="00" /></li>
                                                                                                     </ul>
                                             </div>
                                             <a href="javascript:void(0);" class="next_ tFocus-rightbtn">下一张</a>
@@ -283,7 +191,7 @@ $(function () {
                 <div class="mask"></div>
             </li>
                                     <li>
-                <img src="picture/52bd10620a.png" />
+                <img src="example/logo/huaxiayinhanglogo.jpg" />
                 
                                 
                                 <div class="mask-box">
@@ -291,19 +199,19 @@ $(function () {
                                         <div class="prev" class="prev"></div>
                                         <div class="next" class="next"></div>
                                         <ul class="tFocus-pic">
-                                                                                        <li> <a href="#"> <img src="../../../picture/52be75c10a.png" alt="00" /> </a> <div href="#" class="gray_box">悦达起亚</div> </li>
-                                                                                        <li> <a href="#"> <img src="../../../picture/52be76aa0a.png" alt="00" /> </a> <div href="#" class="gray_box">悦达起亚</div> </li>
-                                                                                        <li> <a href="#"> <img src="../../../picture/52be77060a.png" alt="00" /> </a> <div href="#" class="gray_box">悦达起亚</div> </li>
-                                                                                        <li> <a href="#"> <img src="../../../picture/52be771b0a.png" alt="00" /> </a> <div href="#" class="gray_box">悦达起亚</div> </li>
+                                                                                        <li> <a href="#"> <img src="picture/52be75c10a.png" alt="00" /> </a> <div href="#" class="gray_box">悦达起亚</div> </li>
+                                                                                        <li> <a href="#"> <img src="picture/52be76aa0a.png" alt="00" /> </a> <div href="#" class="gray_box">悦达起亚</div> </li>
+                                                                                        <li> <a href="#"> <img src="picture/52be77060a.png" alt="00" /> </a> <div href="#" class="gray_box">悦达起亚</div> </li>
+                                                                                        <li> <a href="#"> <img src="picture/52be771b0a.png" alt="00" /> </a> <div href="#" class="gray_box">悦达起亚</div> </li>
                                                                                     </ul>
                                         <div class="tFocusBtn">
                                             <a href="javascript:void(0);" class="prev_ tFocus-leftbtn">上一张</a>
                                             <div class="tFocus-btn">
                                                 <ul>
-                                                                                                        <li class="active"><img src="../../../picture/52be75c10a.png" alt="00" /></li>
-                                                                                                        <li ><img src="../../../picture/52be76aa0a.png" alt="00" /></li>
-                                                                                                        <li ><img src="../../../picture/52be77060a.png" alt="00" /></li>
-                                                                                                        <li ><img src="../../../picture/52be771b0a.png" alt="00" /></li>
+                                                                                                        <li class="active"><img src="picture/52be75c10a.png" alt="00" /></li>
+                                                                                                        <li ><img src="picture/52be76aa0a.png" alt="00" /></li>
+                                                                                                        <li ><img src="picture/52be77060a.png" alt="00" /></li>
+                                                                                                        <li ><img src="picture/52be771b0a.png" alt="00" /></li>
                                                                                                     </ul>
                                             </div>
                                             <a href="javascript:void(0);" class="next_ tFocus-rightbtn">下一张</a>
@@ -318,7 +226,7 @@ $(function () {
                 <div class="mask"></div>
             </li>
                                     <li>
-                <img src="../../../picture/52bd109e0a.png" />
+               <img src="example/logo/minshengyinhanglogo.jpg" />
                 
                                 
                                 <div class="mask-box">
@@ -326,19 +234,19 @@ $(function () {
                                         <div class="prev" class="prev"></div>
                                         <div class="next" class="next"></div>
                                         <ul class="tFocus-pic">
-                                                                                        <li> <a href="#"> <img src="../../../picture/52cd2760079.jpg" alt="00" /> </a> <div href="#" class="gray_box">天津站LED</div> </li>
-                                                                                        <li> <a href="#"> <img src="../../../picture/52cd279b079.jpg" alt="00" /> </a> <div href="#" class="gray_box">北京南站LED</div> </li>
-                                                                                        <li> <a href="#"> <img src="../../../picture/52cd27b0079.jpg" alt="00" /> </a> <div href="#" class="gray_box">武汉站LED</div> </li>
-                                                                                        <li> <a href="#"> <img src="../../../picture/52cd27c3079.jpg" alt="00" /> </a> <div href="#" class="gray_box">广州南站LED</div> </li>
+                                                                                        <li> <a href="#"> <img src="picture/52cd2760079.jpg" alt="00" /> </a> <div href="#" class="gray_box">天津站LED</div> </li>
+                                                                                        <li> <a href="#"> <img src="picture/52cd279b079.jpg" alt="00" /> </a> <div href="#" class="gray_box">北京南站LED</div> </li>
+                                                                                        <li> <a href="#"> <img src="picture/52cd27b0079.jpg" alt="00" /> </a> <div href="#" class="gray_box">武汉站LED</div> </li>
+                                                                                        <li> <a href="#"> <img src="picture/52cd27c3079.jpg" alt="00" /> </a> <div href="#" class="gray_box">广州南站LED</div> </li>
                                                                                     </ul>
                                         <div class="tFocusBtn">
                                             <a href="javascript:void(0);" class="prev_ tFocus-leftbtn">上一张</a>
                                             <div class="tFocus-btn">
                                                 <ul>
-                                                                                                        <li class="active"><img src="../../../picture/52cd2760079.jpg" alt="00" /></li>
-                                                                                                        <li ><img src="../../../picture/52cd279b079.jpg" alt="00" /></li>
-                                                                                                        <li ><img src="../../../picture/52cd27b0079.jpg" alt="00" /></li>
-                                                                                                        <li ><img src="../../../picture/52cd27c3079.jpg" alt="00" /></li>
+                                                                                                        <li class="active"><img src="picture/52cd2760079.jpg" alt="00" /></li>
+                                                                                                        <li ><img src="picture/52cd279b079.jpg" alt="00" /></li>
+                                                                                                        <li ><img src="picture/52cd27b0079.jpg" alt="00" /></li>
+                                                                                                        <li ><img src="picture/52cd27c3079.jpg" alt="00" /></li>
                                                                                                     </ul>
                                             </div>
                                             <a href="javascript:void(0);" class="next_ tFocus-rightbtn">下一张</a>
@@ -353,7 +261,7 @@ $(function () {
                 <div class="mask"></div>
             </li>
                                     <li>
-                <img src="picture/52bd10b30a.png" />
+               <img src="example/logo/wankelogo.jpg" />
                 
                                 
                                 <div class="mask-box">
@@ -361,15 +269,15 @@ $(function () {
                                         <div class="prev" class="prev"></div>
                                         <div class="next" class="next"></div>
                                         <ul class="tFocus-pic">
-                                                                                        <li> <a href="#"> <img src="../../../picture/52be7bea0a.png" alt="00" /> </a> <div href="#" class="gray_box">上海通用五菱</div> </li>
-                                                                                        <li> <a href="#"> <img src="../../../picture/52be7c030a.png" alt="00" /> </a> <div href="#" class="gray_box">上海通用五菱</div> </li>
+                                                                                        <li> <a href="#"> <img src="picture/52be7bea0a.png" alt="00" /> </a> <div href="#" class="gray_box">上海通用五菱</div> </li>
+                                                                                        <li> <a href="#"> <img src="picture/52be7c030a.png" alt="00" /> </a> <div href="#" class="gray_box">上海通用五菱</div> </li>
                                                                                     </ul>
                                         <div class="tFocusBtn">
                                             <a href="javascript:void(0);" class="prev_ tFocus-leftbtn">上一张</a>
                                             <div class="tFocus-btn">
                                                 <ul>
-                                                                                                        <li class="active"><img src="../../../picture/52be7bea0a.png" alt="00" /></li>
-                                                                                                        <li ><img src="../../../picture/52be7c030a.png" alt="00" /></li>
+                                                                                                        <li class="active"><img src="picture/52be7bea0a.png" alt="00" /></li>
+                                                                                                        <li ><img src="picture/52be7c030a.png" alt="00" /></li>
                                                                                                     </ul>
                                             </div>
                                             <a href="javascript:void(0);" class="next_ tFocus-rightbtn">下一张</a>
@@ -384,7 +292,7 @@ $(function () {
                 <div class="mask"></div>
             </li>
                                     <li>
-                <img src="../../../picture/52bd10e80a.png" />
+                <img src="example/logo/yuexiudichanlogo.gif" />
                 
                                 
                                 <div class="mask-box">
@@ -392,13 +300,13 @@ $(function () {
                                         <div class="prev" class="prev"></div>
                                         <div class="next" class="next"></div>
                                         <ul class="tFocus-pic">
-                                                                                        <li> <a href="#"> <img src="../../../picture/52be77eb0a.png" alt="00" /> </a> <div href="#" class="gray_box">东风日产</div> </li>
+                                                                                        <li> <a href="#"> <img src="picture/52be77eb0a.png" alt="00" /> </a> <div href="#" class="gray_box">东风日产</div> </li>
                                                                                     </ul>
                                         <div class="tFocusBtn">
                                             <a href="javascript:void(0);" class="prev_ tFocus-leftbtn">上一张</a>
                                             <div class="tFocus-btn">
                                                 <ul>
-                                                                                                        <li class="active"><img src="../../../picture/52be77eb0a.png" alt="00" /></li>
+                                                                                                        <li class="active"><img src="picture/52be77eb0a.png" alt="00" /></li>
                                                                                                     </ul>
                                             </div>
                                             <a href="javascript:void(0);" class="next_ tFocus-rightbtn">下一张</a>
@@ -413,7 +321,7 @@ $(function () {
                 <div class="mask"></div>
             </li>
                                     <li>
-                <img src="../../../picture/52bd10fd0a.png" />
+                <img src="example/logo/zhongguorenshoulogo.jpg" />
                 
                                 
                                 <div class="mask-box">
@@ -421,14 +329,14 @@ $(function () {
                                         <div class="prev" class="prev"></div>
                                         <div class="next" class="next"></div>
                                         <ul class="tFocus-pic">
-                                                                                        <li> <a href="#"> <img src="../../../picture/52cd2a14079.jpg" alt="00" /> </a> <div href="#" class="gray_box">LED</div> </li>
+                                                                                        <li> <a href="#"> <img src="picture/52cd2a14079.jpg" alt="00" /> </a> <div href="#" class="gray_box">LED</div> </li>
                                                                                         <li> <a href="#"> <img src="picture/52cd2a21079.jpg" alt="00" /> </a> <div href="#" class="gray_box">LED</div> </li>
                                                                                     </ul>
                                         <div class="tFocusBtn">
                                             <a href="javascript:void(0);" class="prev_ tFocus-leftbtn">上一张</a>
                                             <div class="tFocus-btn">
                                                 <ul>
-                                                                                                        <li class="active"><img src="../../../picture/52cd2a14079.jpg" alt="00" /></li>
+                                                                                                        <li class="active"><img src="picture/52cd2a14079.jpg" alt="00" /></li>
                                                                                                         <li ><img src="picture/52cd2a21079.jpg" alt="00" /></li>
                                                                                                     </ul>
                                             </div>
@@ -444,7 +352,7 @@ $(function () {
                 <div class="mask"></div>
             </li>
                                     <li>
-                <img src="../../../picture/52bd11110a.png" />
+                <img src="example/logo/zhongtiesanjulogo.jpg" />
                 
                                 
                                 <div class="mask-box">
@@ -471,7 +379,7 @@ $(function () {
                 <div class="mask"></div>
             </li>
                                     <li>
-                <img src="../../../picture/52bd12f70a.png" />
+              <img src="example/logo/zhongxinyinhanglogo.jpg" />
                 
                                 
                                 <div class="mask-box">
@@ -480,16 +388,16 @@ $(function () {
                                         <div class="next" class="next"></div>
                                         <ul class="tFocus-pic">
                                                                                         <li> <a href="#"> <img src="picture/52d3a48d079.jpg" alt="00" /> </a> <div href="#" class="gray_box">国窖1573</div> </li>
-                                                                                        <li> <a href="#"> <img src="../../../picture/52d3a4c4079.jpg" alt="00" /> </a> <div href="#" class="gray_box">国窖15731</div> </li>
-                                                                                        <li> <a href="#"> <img src="../../../picture/52d3a4e4079.jpg" alt="00" /> </a> <div href="#" class="gray_box">国窖2</div> </li>
+                                                                                        <li> <a href="#"> <img src="picture/52d3a4c4079.jpg" alt="00" /> </a> <div href="#" class="gray_box">国窖15731</div> </li>
+                                                                                        <li> <a href="#"> <img src="picture/52d3a4e4079.jpg" alt="00" /> </a> <div href="#" class="gray_box">国窖2</div> </li>
                                                                                     </ul>
                                         <div class="tFocusBtn">
                                             <a href="javascript:void(0);" class="prev_ tFocus-leftbtn">上一张</a>
                                             <div class="tFocus-btn">
                                                 <ul>
                                                                                                         <li class="active"><img src="picture/52d3a48d079.jpg" alt="00" /></li>
-                                                                                                        <li ><img src="../../../picture/52d3a4c4079.jpg" alt="00" /></li>
-                                                                                                        <li ><img src="../../../picture/52d3a4e4079.jpg" alt="00" /></li>
+                                                                                                        <li ><img src="picture/52d3a4c4079.jpg" alt="00" /></li>
+                                                                                                        <li ><img src="picture/52d3a4e4079.jpg" alt="00" /></li>
                                                                                                     </ul>
                                             </div>
                                             <a href="javascript:void(0);" class="next_ tFocus-rightbtn">下一张</a>
@@ -505,302 +413,14 @@ $(function () {
             </li>
                                                 
         </ul> 
-                        <ul>
-                                 <li>
-                <img src="../../../picture/52bd13dc0a.png" />
-                
-                                
-                                <div class="mask-box">
-                                    <div class="tFocus">
-                                        <div class="prev" class="prev"></div>
-                                        <div class="next" class="next"></div>
-                                        <ul class="tFocus-pic">
-                                                                                    </ul>
-                                        <div class="tFocusBtn">
-                                            <a href="javascript:void(0);" class="prev_ tFocus-leftbtn">上一张</a>
-                                            <div class="tFocus-btn">
-                                                <ul>
-                                                                                                    </ul>
-                                            </div>
-                                            <a href="javascript:void(0);" class="next_ tFocus-rightbtn">下一张</a>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="close"></div>
-                                </div>
-                                
-                                                                
-                <div class="mask"></div>
-            </li>
-                                    <li>
-                <img src="../../../picture/52bd15a10a.png" />
-                
-                                
-                                <div class="mask-box">
-                                    <div class="tFocus">
-                                        <div class="prev" class="prev"></div>
-                                        <div class="next" class="next"></div>
-                                        <ul class="tFocus-pic">
-                                                                                    </ul>
-                                        <div class="tFocusBtn">
-                                            <a href="javascript:void(0);" class="prev_ tFocus-leftbtn">上一张</a>
-                                            <div class="tFocus-btn">
-                                                <ul>
-                                                                                                    </ul>
-                                            </div>
-                                            <a href="javascript:void(0);" class="next_ tFocus-rightbtn">下一张</a>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="close"></div>
-                                </div>
-                                
-                                                                
-                <div class="mask"></div>
-            </li>
-                                    <li>
-                <img src="../../../picture/52bd16a50a.png" />
-                
-                                
-                                <div class="mask-box">
-                                    <div class="tFocus">
-                                        <div class="prev" class="prev"></div>
-                                        <div class="next" class="next"></div>
-                                        <ul class="tFocus-pic">
-                                                                                    </ul>
-                                        <div class="tFocusBtn">
-                                            <a href="javascript:void(0);" class="prev_ tFocus-leftbtn">上一张</a>
-                                            <div class="tFocus-btn">
-                                                <ul>
-                                                                                                    </ul>
-                                            </div>
-                                            <a href="javascript:void(0);" class="next_ tFocus-rightbtn">下一张</a>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="close"></div>
-                                </div>
-                                
-                                                                
-                <div class="mask"></div>
-            </li>
-                                    <li>
-                <img src="picture/52bd17610a.png" />
-                
-                                
-                                <div class="mask-box">
-                                    <div class="tFocus">
-                                        <div class="prev" class="prev"></div>
-                                        <div class="next" class="next"></div>
-                                        <ul class="tFocus-pic">
-                                                                                    </ul>
-                                        <div class="tFocusBtn">
-                                            <a href="javascript:void(0);" class="prev_ tFocus-leftbtn">上一张</a>
-                                            <div class="tFocus-btn">
-                                                <ul>
-                                                                                                    </ul>
-                                            </div>
-                                            <a href="javascript:void(0);" class="next_ tFocus-rightbtn">下一张</a>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="close"></div>
-                                </div>
-                                
-                                                                
-                <div class="mask"></div>
-            </li>
-                                    <li>
-                <img src="../../../picture/52bd19ea0a.png" />
-                
-                                
-                                <div class="mask-box">
-                                    <div class="tFocus">
-                                        <div class="prev" class="prev"></div>
-                                        <div class="next" class="next"></div>
-                                        <ul class="tFocus-pic">
-                                                                                        <li> <a href="#"> <img src="picture/52be86d90a.png" alt="00" /> </a> <div href="#" class="gray_box">徐工机械</div> </li>
-                                                                                        <li> <a href="#"> <img src="picture/52be86e50a.png" alt="00" /> </a> <div href="#" class="gray_box">徐工机械</div> </li>
-                                                                                    </ul>
-                                        <div class="tFocusBtn">
-                                            <a href="javascript:void(0);" class="prev_ tFocus-leftbtn">上一张</a>
-                                            <div class="tFocus-btn">
-                                                <ul>
-                                                                                                        <li class="active"><img src="picture/52be86d90a.png" alt="00" /></li>
-                                                                                                        <li ><img src="picture/52be86e50a.png" alt="00" /></li>
-                                                                                                    </ul>
-                                            </div>
-                                            <a href="javascript:void(0);" class="next_ tFocus-rightbtn">下一张</a>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="close"></div>
-                                </div>
-                                
-                                                                
-                <div class="mask"></div>
-            </li>
-                                    <li>
-                <img src="../../../picture/52cd182d079.jpg" />
-                
-                                
-                                <div class="mask-box">
-                                    <div class="tFocus">
-                                        <div class="prev" class="prev"></div>
-                                        <div class="next" class="next"></div>
-                                        <ul class="tFocus-pic">
-                                                                                        <li> <a href="#"> <img src="../../../picture/52cd26f7079.jpg" alt="00" /> </a> <div href="#" class="gray_box">东风标致</div> </li>
-                                                                                    </ul>
-                                        <div class="tFocusBtn">
-                                            <a href="javascript:void(0);" class="prev_ tFocus-leftbtn">上一张</a>
-                                            <div class="tFocus-btn">
-                                                <ul>
-                                                                                                        <li class="active"><img src="../../../picture/52cd26f7079.jpg" alt="00" /></li>
-                                                                                                    </ul>
-                                            </div>
-                                            <a href="javascript:void(0);" class="next_ tFocus-rightbtn">下一张</a>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="close"></div>
-                                </div>
-                                
-                                                                
-                <div class="mask"></div>
-            </li>
-                                                
-        </ul> 
+                      
                                 
     </div>
 </div>
 <!-- /永达案例 -->
 
-
-
-
-    <div id="foot">
-
-        <div class="top">
-
-            <div class="left" >
-                                
-                                        
-                                
-                                            <ul>
-                            <li><h3>关于我们</h3></li>
-                            
-                                                        
-                                                        
-                                 
-                                    <li><a href="/index.php/52aa7aff07f" target="_blank">公司简介</a></li>
-                                                                
-                                
-                                                        
-                                 
-                                    <li><a href="/index.php/52aa7f9707f" target="_blank">发展历程</a></li>
-                                                                
-                                
-                                                        
-                                 
-                                    <li><a href="/index.php/52aaa41c07f" target="_blank">服务客户</a></li>
-                                                                
-                                
-      
-                                                                                </ul>
-                                        
-                                
-                                            <ul>
-                            <li><h3>实力展示</h3></li>
-                            
-                                                        
-                                                        
-                                 
-                                    <li><a href="/index.php/52abbb3607f" target="_blank">实力展示1</a></li>
-                                                                
-                                
-                                                        
-                                 
-                                    <li><a href="/index.php/52aab8da07f" target="_blank">实力展示1</a></li>
-                                                                
-                        
-                                                                                </ul>
-                                        
-                                
-                                            <ul>
-                            <li><h3>真实案例</h3></li>
-                            
-                                                        
-                                                        
-                                 
-                                    <li><a href="/index.php/52b432e507f" target="_blank">真实案例1</a></li>
-                                                                
-                                
-                                                        
-                                 
-                                    <li><a href="/index.php/52aec02607f" target="_blank">真实案例1</a></li>
-                                                                
-                                
-                                                        
-                                 
-                                    <li><a href="/index.php/52aec42d07f" target="_blank">真实案例1</a></li>
-                                                                
-                                
-                                                        
-
-                                                                                </ul>
-                                        
-                                
-                                            <ul>
-                            <li><h3>联系我们</h3></li>
-                            
-                                                                <li><a href="/travel.php" target="_blank">联系我们</a></li>
-                                                    </ul>
-                                        
-                                
-                                            <ul>
-                            <li><h3>加入我们</h3></li>
-                            
-                                                        
-                                                        
-                                 
-                                    <li><a href="/index.php/52afbc6d07f" target="_blank">社会招聘</a></li>
-                                                                
-                                
-                                                        
-                                 
-                                    <li><a href="/index.php/52aed92007f" target="_blank">留言</a></li>
-                                                                
-                                
-                                                                                </ul>
-                                        
-                                
-                                   
-                                        
-                            </div>
-
-        </div>
-
-        
-
-
-    </div>
-    <!-- # -->
-
-
-
-    <div id="footline"></div>
-<div class="copyright">COPYRIGHT; 版权所有 武汉汇海天下广告有限责任公司  POWERED BY:   备案序号:苏ICP备05048338号</div>
-    
-    <!-- foot 结束 -->
-    
-  
-    
-    
+<!--footer-->
+<#include "footer.ftl">
+<!--/footer-->
 </body>
 </html>

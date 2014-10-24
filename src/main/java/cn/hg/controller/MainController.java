@@ -21,4 +21,34 @@ public class MainController
 	public ModelAndView index() {
 		return new ModelAndView("fore/index");
 	}
+	
+	@RequestMapping("aboutus")
+	public ModelAndView aboutus() {
+		return new ModelAndView("fore/aboutus");
+	}
+	
+	@RequestMapping("strength")
+	public ModelAndView strength() {
+		return new ModelAndView("fore/strength");
+	}
+	
+	@RequestMapping("case")
+	public ModelAndView cases() {
+		return new ModelAndView("fore/case");
+	}
+	
+	@RequestMapping("contact")
+	public ModelAndView contact() {
+		return new ModelAndView("fore/contact");
+	}
+	
+	@RequestMapping("joinus")
+	public ModelAndView joinus() {
+		return new ModelAndView("fore/joinus");
+	}
+	
+	@RequestMapping("topbar")
+	public ModelAndView topbar() {
+		return new ModelAndView("fore/topbar");
+	}
 }

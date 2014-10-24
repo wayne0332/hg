@@ -338,10 +338,7 @@ div.nav_list ul.show_li{display: block;}
 #siderbar{ position:relative; top:-52px; float:left;}
 #sidernav{ width:188px; font-size:14px; line-height:52px;}
 #sidernav h2{width:188px; height:52px; background:#f36e1d; text-align:center; color:#fff; font-size:18px; font:'宋体';}
-#sidernav li{width:188px; height:52px;  margin-top:1px;}
-#sidernav li a{color:#949494; width:123px; height:52px; padding-left:65px; display:block; background:url(../images/ico2.png) 50px 25px no-repeat #f0f0f0;}
-#sidernav li a:hover{text-decoration:none; background:url(../images/ico3.png) 50px 25px no-repeat #949494; color:#fff;}
-#sidernav li .sider_active{text-decoration:none; background:url(../images/ico3.png) 50px 25px no-repeat #949494; color:#fff;}
+
 #siderbar .sider1{ height:113px; width:188px; position:relative; margin-top:10px; _zoom: 1; display: none;}
 #siderbar .sider1 img{height:113px; width:188px; overflow:hidden;}
 #siderbar .sider1 h3{ width:188px; position:absolute; left:0; bottom:0; height:34px; color:#fff; line-height:34px; text-align:center;}

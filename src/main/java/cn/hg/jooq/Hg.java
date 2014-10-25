@@ -22,7 +22,7 @@ public class Hg extends org.jooq.impl.SchemaImpl {
 	 * No further instances allowed
 	 */
 	private Hg() {
-		super("hg");
+		super("hhgg853478196");
 	}
 
 	@Override

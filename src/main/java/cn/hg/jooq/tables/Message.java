@@ -11,7 +11,7 @@ package cn.hg.jooq.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Message extends org.jooq.impl.TableImpl<cn.hg.jooq.tables.records.MessageRecord> {
 
-	private static final long serialVersionUID = -1241445258;
+	private static final long serialVersionUID = 1106023810;
 
 	/**
 	 * The singleton instance of <code>hg.message</code>
@@ -54,7 +54,7 @@ public class Message extends org.jooq.impl.TableImpl<cn.hg.jooq.tables.records.M
 	/**
 	 * The column <code>hg.message.status</code>.
 	 */
-	public final org.jooq.TableField<cn.hg.jooq.tables.records.MessageRecord, java.lang.Byte> STATUS = createField("status", org.jooq.impl.SQLDataType.TINYINT, this, "");
+	public final org.jooq.TableField<cn.hg.jooq.tables.records.MessageRecord, cn.hg.constant.ConstantGenerator.Constant> STATUS = createField("status", org.jooq.impl.SQLDataType.TINYINT, this, "", new cn.hg.extend.jooq.ConstantConverter(java.lang.Byte.class, cn.hg.constant.MessageStatus.class));
 
 	/**
 	 * The column <code>hg.message.time_stamp</code>.

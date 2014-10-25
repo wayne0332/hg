@@ -1,5 +1,6 @@
 package cn.hg.controller;
 
+import cn.hg.jooq.tables.records.ManagerRecord;
 import cn.hg.pojo.Manager;
 import org.jooq.DSLContext;
 import org.springframework.transaction.annotation.Propagation;
@@ -32,7 +33,7 @@ public class ManagerController {
 
 	@RequestMapping(value = "/login", method =RequestMethod.POST)
 	public ModelAndView login(Manager user) {
-		Manager manager = dsl.selectFrom(MANAGER).where(MANAGER.NAME.equal(user.getName())).and(MANAGER.PASSWORD.equal(user.getPassword())).fetchOne().into(Manager.class);
+		ManagerRecord manager = dsl.selectFrom(MANAGER).where(MANAGER.NAME.equal(user.getName())).and(MANAGER.PASSWORD.equal(user.getPassword())).fetchOne();
 		if (manager != null) {
 			session.setAttribute(Param.MANAGER, manager);
 			return new ModelAndView("redirect:/manager/main").addObject(Param.MANAGER, manager);

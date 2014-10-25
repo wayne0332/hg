@@ -11,7 +11,7 @@ package cn.hg.jooq.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Config extends org.jooq.impl.TableImpl<cn.hg.jooq.tables.records.ConfigRecord> {
 
-	private static final long serialVersionUID = 1584044261;
+	private static final long serialVersionUID = -759586372;
 
 	/**
 	 * The singleton instance of <code>hg.config</code>
@@ -39,7 +39,7 @@ public class Config extends org.jooq.impl.TableImpl<cn.hg.jooq.tables.records.Co
 	/**
 	 * The column <code>hg.config.type</code>.
 	 */
-	public final org.jooq.TableField<cn.hg.jooq.tables.records.ConfigRecord, java.lang.Byte> TYPE = createField("type", org.jooq.impl.SQLDataType.TINYINT, this, "");
+	public final org.jooq.TableField<cn.hg.jooq.tables.records.ConfigRecord, cn.hg.constant.ConstantGenerator.Constant> TYPE = createField("type", org.jooq.impl.SQLDataType.TINYINT, this, "", new cn.hg.extend.jooq.ConstantConverter(java.lang.Byte.class, cn.hg.constant.ConfigType.class));
 
 	/**
 	 * The column <code>hg.config.content</code>.

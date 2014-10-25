@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>About | Bootstrap 3.x Admin Theme</title>
+        <title>汇海天下</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -91,7 +91,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="main.ftl">Admin Panel</a>
+                            <span class="navbar-brand">汇海天下</span>
                         </div>
                         <div class="collapse navbar-collapse main-navbar-collapse">
                             <ul class="nav navbar-nav">
@@ -108,6 +108,19 @@
                                         <li role="presentation" class="dropdown-header">Dropdown header</li>
                                         <li><a href="#">Separated link</a></li>
                                         <li><a href="#">One more separated link</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown">
+                                    <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i
+                                            class="glyphicon glyphicon-user"></i> ${manager.name} <i class="caret"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">修改密码</a></li>
+                                        <li><a href="#">其他账号</a></li>
+                                        <li role="presentation" class="divider"></li>
+                                        <li><a href="index.html">注销</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -294,7 +307,7 @@
 
         <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
         <script type="text/javascript" src="/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="/js/twitter-bootstrap-hover-dropdown.min.js"></script>
+        <script type="text/javascript" src="/js/twitter-bootstrap-hover-dropdown.js"></script>
         <script type="text/javascript" src="/js/bootstrap-admin-theme-change-size.js"></script>
     </body>
 </html>

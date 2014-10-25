@@ -231,7 +231,7 @@
                 <configuration>
                     <jdbc>
                         <driver>com.mysql.jdbc.Driver</driver>
-                        <url>jdbc:mysql://localhost:3306/hg</url>
+                        <url>jdbc:mysql://localhost:3306/hhgg853478196</url>
                         <user>root</user>
                         <password>root</password>
                     </jdbc>

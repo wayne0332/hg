@@ -11,7 +11,7 @@ package cn.hg.jooq.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class History extends org.jooq.impl.TableImpl<cn.hg.jooq.tables.records.HistoryRecord> {
 
-	private static final long serialVersionUID = 648354906;
+	private static final long serialVersionUID = 1005007596;
 
 	/**
 	 * The singleton instance of <code>hg.history</code>
@@ -27,9 +27,9 @@ public class History extends org.jooq.impl.TableImpl<cn.hg.jooq.tables.records.H
 	}
 
 	/**
-	 * The column <code>hg.history.id</code>.
+	 * The column <code>hg.history.id</code>. 发展历程
 	 */
-	public final org.jooq.TableField<cn.hg.jooq.tables.records.HistoryRecord, java.lang.Integer> ID = createField("id", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
+	public final org.jooq.TableField<cn.hg.jooq.tables.records.HistoryRecord, java.lang.Integer> ID = createField("id", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "发展历程");
 
 	/**
 	 * The column <code>hg.history.name</code>.

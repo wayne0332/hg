@@ -11,7 +11,7 @@ package cn.hg.jooq.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Description extends org.jooq.impl.TableImpl<cn.hg.jooq.tables.records.DescriptionRecord> {
 
-	private static final long serialVersionUID = -894139548;
+	private static final long serialVersionUID = -73783089;
 
 	/**
 	 * The singleton instance of <code>hg.description</code>
@@ -27,9 +27,9 @@ public class Description extends org.jooq.impl.TableImpl<cn.hg.jooq.tables.recor
 	}
 
 	/**
-	 * The column <code>hg.description.id</code>.
+	 * The column <code>hg.description.id</code>. 通用描述信息
 	 */
-	public final org.jooq.TableField<cn.hg.jooq.tables.records.DescriptionRecord, java.lang.Integer> ID = createField("id", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
+	public final org.jooq.TableField<cn.hg.jooq.tables.records.DescriptionRecord, java.lang.Integer> ID = createField("id", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "通用描述信息");
 
 	/**
 	 * The column <code>hg.description.text</code>.
@@ -39,7 +39,7 @@ public class Description extends org.jooq.impl.TableImpl<cn.hg.jooq.tables.recor
 	/**
 	 * The column <code>hg.description.type</code>.
 	 */
-	public final org.jooq.TableField<cn.hg.jooq.tables.records.DescriptionRecord, java.lang.Byte> TYPE = createField("type", org.jooq.impl.SQLDataType.TINYINT, this, "");
+	public final org.jooq.TableField<cn.hg.jooq.tables.records.DescriptionRecord, cn.hg.constant.ConstantGenerator.Constant> TYPE = createField("type", org.jooq.impl.SQLDataType.TINYINT, this, "", new cn.hg.extend.jooq.ConstantConverter(java.lang.Byte.class, cn.hg.constant.DescriptionType.class));
 
 	/**
 	 * Create a <code>hg.description</code> table reference

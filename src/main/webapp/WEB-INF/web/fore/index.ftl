@@ -1,30 +1,29 @@
 ﻿<!doctype html>
 <html>
-<head>
 <meta charset="utf-8">
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 <title>武汉汇海天下广告有限责任公司</title>
 
-<script type="text/javascript" src="../../../js/4ce26076e427402e8daf3118ab8b3174.js"></script>
-<script type="text/javascript" src="../../../js/searchinfowindow_min.js"></script>
-<script type="text/javascript" src="../../../js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="../../../js/slide.js"></script>
-<script type="text/javascript" src="../../../js/common.js"></script>
-<script type="text/javascript" src="../../../js/jwplayer.js"></script>
+<script type="text/javascript" src="/js/4ce26076e427402e8daf3118ab8b3174.js"></script>
+<script type="text/javascript" src="/js/searchinfowindow_min.js"></script>
+<script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/js/slide.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+<script type="text/javascript" src="/js/jwplayer.js"></script>
 <link rel="shortcut icon" type="image/x-icon" href="../../../picture/32X32ico.ico" >
 
 
-<link rel="stylesheet" href="../../../css/searchinfowindow_min.css" />
-<link type="text/css" href="../../../css/api.css" rel="stylesheet" />
+<link rel="stylesheet" href="/css/searchinfowindow_min.css" />
+<link type="text/css" href="/css/api.css" rel="stylesheet" />
 
 
 
-<link type="text/css" href="../../../css/style_1.css" rel="stylesheet" />
+<link type="text/css" href="/css/style_1.css" rel="stylesheet" />
 
-<link rel="stylesheet" href="../../../css/responsiveslides.css">
+<link rel="stylesheet" href="/css/responsiveslides.css">
 
-<link rel="stylesheet" href="../../../css/style3.css">
-<script type="text/javascript" src="../../../js/responsiveslides.min.js"></script>
+<link rel="stylesheet" href="/css/style3.css">
+<script type="text/javascript" src="/js/responsiveslides.min.js"></script>
 <script type="text/javascript">
 function autoScroll() {
 	var indexScroll = document.getElementById('indexScroll');
@@ -109,27 +108,27 @@ $(function () {
     <div class="callbacks_container">
 		<ul class="rslides" id="slider4">
 			<li>
-				<img src="../../../images/banjinchejian.jpg" alt="" style="height:233px;">
+				<img src="/images/banjinchejian.jpg" alt="" style="height:233px;">
 				<p class="caption">钣金车间</p>
 			</li>
 			<li>
-				<img src="../../../images/baozhuangchejian.jpg" alt="" style="height:233px;">
+				<img src="/images/baozhuangchejian.jpg" alt="" style="height:233px;">
 				<p class="caption">包装车间</p>
 			</li>
 			<li>
-				<img src="../../../images/diaokechejian.jpg" alt="" style="height:233px;">
+				<img src="/images/diaokechejian.jpg" alt="" style="height:233px;">
 				<p class="caption">雕刻车间</p>
 			</li>
 			<li>
-				<img src="../../../images/diaozhuangchejian.jpg" alt="" style="height:233px;">
+				<img src="/images/diaozhuangchejian.jpg" alt="" style="height:233px;">
 				<p class="caption">吊装车间</p>
 			</li>
 			<li>
-				<img src="../../../images/jiguangdiaokechejian.jpg" alt="" style="height:233px;">
+				<img src="/images/jiguangdiaokechejian.jpg" alt="" style="height:233px;">
 				<p class="caption">激光雕刻车间</p>
 			</li>
 			<li>
-				<img src="../../../images/penyinchejian.jpg" alt="" style="height:233px;">
+				<img src="/images/penyinchejian.jpg" alt="" style="height:233px;">
 				<p class="caption">喷印车间</p>
 			</li>
 		</ul>

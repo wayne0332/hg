@@ -11,17 +11,17 @@ package cn.hg.jooq.tables.records;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class HistoryRecord extends org.jooq.impl.UpdatableRecordImpl<cn.hg.jooq.tables.records.HistoryRecord> implements org.jooq.Record4<java.lang.Integer, java.lang.String, java.sql.Timestamp, java.lang.Integer> {
 
-	private static final long serialVersionUID = 370034147;
+	private static final long serialVersionUID = -1349631695;
 
 	/**
-	 * Setter for <code>hg.history.id</code>.
+	 * Setter for <code>hg.history.id</code>. 发展历程
 	 */
 	public void setId(java.lang.Integer value) {
 		setValue(0, value);
 	}
 
 	/**
-	 * Getter for <code>hg.history.id</code>.
+	 * Getter for <code>hg.history.id</code>. 发展历程
 	 */
 	public java.lang.Integer getId() {
 		return (java.lang.Integer) getValue(0);

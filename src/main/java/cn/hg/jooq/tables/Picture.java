@@ -11,7 +11,7 @@ package cn.hg.jooq.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Picture extends org.jooq.impl.TableImpl<cn.hg.jooq.tables.records.PictureRecord> {
 
-	private static final long serialVersionUID = -933785930;
+	private static final long serialVersionUID = -1679165604;
 
 	/**
 	 * The singleton instance of <code>hg.picture</code>
@@ -30,6 +30,11 @@ public class Picture extends org.jooq.impl.TableImpl<cn.hg.jooq.tables.records.P
 	 * The column <code>hg.picture.id</code>.
 	 */
 	public final org.jooq.TableField<cn.hg.jooq.tables.records.PictureRecord, java.lang.Integer> ID = createField("id", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
+
+	/**
+	 * The column <code>hg.picture.group_id</code>.
+	 */
+	public final org.jooq.TableField<cn.hg.jooq.tables.records.PictureRecord, java.lang.Integer> GROUP_ID = createField("group_id", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
 	/**
 	 * The column <code>hg.picture.name</code>.

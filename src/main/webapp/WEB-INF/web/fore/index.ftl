@@ -92,10 +92,7 @@ $(function () {
     <div class="left">
         <h3><span><a href="/index.php/52aab8da07f"> more </a></span>公司简介</h3>
 			<div id="indexScroll">
-            <p> <a href="/about/index.shtml">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;武汉汇海天下有限公司是一家专门从事户外广告工程设计施工的专业化广告制作企业，服务于广大客户及广告业同行，为其提供最为省心和满意的服务使我们一贯追求的目标。公司拥有现代化标准厂房5000余平方，先进设备50余台套，在行中处于领先地位。</a></p>
-            <p> <a href="/about/index.shtml">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;多年来在不断的实践、失败及成功之中我们同客户一起进步，共同成长。取得了不俗的成绩，同事培养了一大批充满热情的广告工作者。他们之中既有思想灵动、畅想无限的设计师，亦有充满奇思妙想的高级工艺师、高级技工及管理人员。</a></p>
-            <p><a href="/about/index.shtml">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在广告设计、户外广告牌制作、大型发光字、楼宇亮化、外立面装饰、高档标识、连锁店招牌等诸多广告品之中。我们掌握了最为核心技术的同事，不断的予以创新和提高，适时引进国际上先进的广告制作设备。</a></p>
-            <p><a href="/about/index.shtml">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们一贯坚持实践"安全、优质、创新、诚信"的服务理念。在服务中注入我们的热情，在产品中融合我们的思想，使我们的产品大气脱俗，卓尔不群。</a></p>
+                <span>${description.text}</span>
            </div>
         <script>
 			var aboutTime = setInterval("autoScroll()",100);

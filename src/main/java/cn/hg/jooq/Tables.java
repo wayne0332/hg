@@ -24,14 +24,9 @@ public class Tables {
 	public static final cn.hg.jooq.tables.Description DESCRIPTION = cn.hg.jooq.tables.Description.DESCRIPTION;
 
 	/**
-	 * The table hg.example
+	 * The table hg.group
 	 */
-	public static final cn.hg.jooq.tables.Example EXAMPLE = cn.hg.jooq.tables.Example.EXAMPLE;
-
-	/**
-	 * The table hg.example_group
-	 */
-	public static final cn.hg.jooq.tables.ExampleGroup EXAMPLE_GROUP = cn.hg.jooq.tables.ExampleGroup.EXAMPLE_GROUP;
+	public static final cn.hg.jooq.tables.Group GROUP = cn.hg.jooq.tables.Group.GROUP;
 
 	/**
 	 * The table hg.history

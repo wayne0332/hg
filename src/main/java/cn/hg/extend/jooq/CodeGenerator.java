@@ -2,11 +2,18 @@ package cn.hg.extend.jooq;
 
 import cn.hg.constant.ConstantGenerator;
 import com.google.common.collect.Lists;
+import org.apache.commons.lang3.StringUtils;
 import org.jooq.util.GenerationTool;
 import org.jooq.util.jaxb.*;
 import org.jooq.util.mysql.MySQLDatabase;
 
+import java.io.FileInputStream;
+import java.util.Properties;
+
+import static cn.hg.Constant.SCHEMA_NAME;
+
 public class CodeGenerator {
+
 	public static void main(String args[]) throws Exception {
 		Configuration configuration = new Configuration();
 		initJdbc(configuration);
@@ -38,11 +45,11 @@ public class CodeGenerator {
 	private static void initDatabase(Generator generator) {
 		Database database = new Database();
 		database.setName(MySQLDatabase.class.getName());
-		database.setInputSchema("hhgg853478196");
+		database.setInputSchema(SCHEMA_NAME);
 		database.setOutputSchema("hg");
 		CustomType customType = new CustomType();
 		customType.setName(ConstantGenerator.Constant.class.getSimpleName());
-		customType.setType("cn.hg.constant.ConstantGenerator.Constant");
+		customType.setType(StringUtils.replace(ConstantGenerator.Constant.class.getName(), "$", "."));
 		customType.setConverter(ConstantConverter.class.getName());
 		database.setCustomTypes(Lists.newArrayList(customType));
 		ForcedType forcedType = new ForcedType();
@@ -52,12 +59,14 @@ public class CodeGenerator {
 		generator.setDatabase(database);
 	}
 
-	private static void initJdbc(Configuration configuration) {
+	private static void initJdbc(Configuration configuration) throws Exception {
+		Properties properties = new Properties();
+		properties.load(new FileInputStream("database.properties"));
 		Jdbc jdbc = new Jdbc();
-		jdbc.setDriver("com.mysql.jdbc.Driver");
-		jdbc.setUrl("jdbc:mysql://localhost:3306/hhgg853478196");
-		jdbc.setUser("root");
-		jdbc.setPassword("root");
+		jdbc.setDriver(properties.getProperty("database.driverClassName"));
+		jdbc.setUrl(properties.getProperty("database.url"));
+		jdbc.setUser(properties.getProperty("database.username"));
+		jdbc.setPassword(properties.getProperty("database.password"));
 		configuration.setJdbc(jdbc);
 	}
 }

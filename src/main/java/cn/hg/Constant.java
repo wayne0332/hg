@@ -6,5 +6,7 @@ public class Constant {
 	public static class Param {
 
 		public static final String MANAGER = "manager";
+		
+		public static final String PICTURE_LIST = "picture_list";
 	}
 }

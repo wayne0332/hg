@@ -78,15 +78,16 @@
                     </li>
                     <li>
                         <ul class="inner">
-     					    <li><a href="/index.php/52b432e507f">钣金车间</a></li>
-                            <li><a href="/index.php/52aec02607f">包装车间</a></li>
-                            <li><a href="/index.php/52aec42d07f">雕刻车间</a></li>
-                            <li><a href="/index.php/52aec57d07f">吊装车间</a></li>
-							<li><a href="/index.php/52aec57d07f">激光雕刻车间</a></li>
- 							<li><a href="/index.php/52aec57d07f">喷印车间</a></li>
-                            <li><a href="/index.php/52aec02607f">制字车间</a></li>
-                            <li><a href="/index.php/52aec42d07f">组装车间</a></li>
-                            <li><a href="/index.php/52aec57d07f">设计事务所</a></li>
+     					    <li><a href="/strength?type=1">钣金车间</a></li>
+                            <li><a href="/strength?type=2">包装车间</a></li>
+                            <li><a href="/strength?type=3">雕刻车间</a></li>
+                            <li><a href="/strength?type=4">吊装车间</a></li>
+							<li><a href="/strength?type=5">激光雕刻车间</a></li>
+							<li><a href="/strength?type=6">激光切割车间</a></li>
+ 							<li><a href="/strength?type=7">喷印车间</a></li>
+                            <li><a href="/strength?type=8">制字车间</a></li>
+                            <li><a href="/strength?type=9">组装车间</a></li>
+                            <li><a href="/strength?type=10">设计事务所</a></li>
                         </ul>
                     </li>
                     <li>

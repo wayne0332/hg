@@ -8,6 +8,7 @@ import cn.hg.constant.DescriptionType;
 import cn.hg.constant.ManagerType;
 import cn.hg.constant.PictureType;
 import cn.hg.jooq.tables.records.DescriptionRecord;
+import cn.hg.jooq.tables.records.PictureRecord;
 import cn.hg.pojo.Picture;
 
 import org.jooq.DSLContext;
@@ -49,11 +50,10 @@ public class MainController
 		{
 			type = "1";
 		}
-		PictureType pictureType = PictureType.valueOf("BANJIN");
-		PictureType.GENERATOR.getByIndex(Integer.valueOf(type)).getIndex();
+		PictureType pictureType = PictureType.GENERATOR.getByIndex(Integer.valueOf(type));
 		//实力展示group_id默认为1
 		Integer group_id = 1;
-		List<Picture> picture_list =	dsl.selectFrom(PICTURE).where(PICTURE.TYPE.eq(pictureType)).and(PICTURE.GROUP_ID.eq(group_id)).fetchInto(Picture.class);
+		List<PictureRecord> picture_list =	dsl.selectFrom(PICTURE).where(PICTURE.TYPE.eq(pictureType)).and(PICTURE.GROUP_ID.eq(group_id)).fetchInto(PictureRecord.class);
 		//前台最多显示4张图片
 		if(picture_list.size()>4)
 		{

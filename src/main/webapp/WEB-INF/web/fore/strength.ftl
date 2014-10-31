@@ -115,22 +115,24 @@
 		
 		<div id="content">
 			<div class="bread">
-				<h3><a href='/'>首页</a> &gt; <a href='/strength'>实力展示</a> &gt; <a href='#'>${picture_list[0].name}</a></h3>
+				<h3><a href='/'>首页</a> &gt; <a href='/strength'>实力展示</a> &gt; <a href='#'><#if picture_list?size!=0>${picture_list[0].name}</#if></a></h3>
 			</div>
 		
 			<div class="about ydjj">
-									<h2>${picture_list[0].name}</h2>
+									<h2><#if picture_list?size!=0>${picture_list[0].name}</#if></h2>
 
 							</div>
 							
 							<div class="flexslider" >
 	<ul class="slides">
+	<#if picture_list?size!=0>
 		<#list picture_list as picture>
 			<li data-thumb="${picture.path}">
-			<img src="${picture.path}">
+			<img src="${picture.path}" height="397">
 			<p class="flex-caption">${picture.name}</p>
 		</li>
 		</#list>
+		</#if>
 	</ul>
 </div>
 		

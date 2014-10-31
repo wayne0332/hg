@@ -1,5 +1,6 @@
 package cn.hg.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import cn.hg.Constant.Param;
@@ -32,13 +33,26 @@ public class MainController
 	private DSLContext dsl;
 
 	@RequestMapping("")
-	public ModelAndView index() {
+	public ModelAndView index() 
+	{
+		//公司简介文字
 		DescriptionRecord description = dsl.selectFrom(DESCRIPTION).where(DESCRIPTION.TYPE.equal(DescriptionType.INTRODUCE)).fetchOne();
-		return new ModelAndView("fore/index").addObject("description", description);
+		//logo及logo图片
+		List<List<PictureRecord>> picture_bag = new ArrayList<List<PictureRecord>>();
+		for(int i =17;i<25;i++)
+		{
+			PictureType pt = PictureType.GENERATOR.getByIndex(i);
+			List<PictureRecord> pl = dsl.selectFrom(PICTURE).where(PICTURE.TYPE.eq(pt)).and(PICTURE.GROUP_ID.eq(Param.LOGO_GROUP_ID)).fetchInto(PictureRecord.class);
+			picture_bag.add(pl);
+		}
+		//实力展示轮播图片
+		List<PictureRecord> picture_list = dsl.selectFrom(PICTURE).where(PICTURE.GROUP_ID.eq(Param.STREGTH_GROUP_ID)).fetchInto(PictureRecord.class);
+		return new ModelAndView("fore/index").addObject("description", description).addObject(Param.PICTURE_BAG,picture_bag).addObject(Param.PICTURE_LIST,picture_list);
 	}
 	
 	@RequestMapping("aboutus")
-	public ModelAndView aboutus() {
+	public ModelAndView aboutus()
+	{
 		return new ModelAndView("fore/aboutus");
 	}
 	
@@ -51,9 +65,7 @@ public class MainController
 			type = "1";
 		}
 		PictureType pictureType = PictureType.GENERATOR.getByIndex(Integer.valueOf(type));
-		//实力展示group_id默认为1
-		Integer group_id = 1;
-		List<PictureRecord> picture_list =	dsl.selectFrom(PICTURE).where(PICTURE.TYPE.eq(pictureType)).and(PICTURE.GROUP_ID.eq(group_id)).fetchInto(PictureRecord.class);
+		List<PictureRecord> picture_list =	dsl.selectFrom(PICTURE).where(PICTURE.TYPE.eq(pictureType)).and(PICTURE.GROUP_ID.eq(Param.STREGTH_GROUP_ID)).fetchInto(PictureRecord.class);
 		//前台最多显示4张图片
 		if(picture_list.size()>4)
 		{
@@ -63,22 +75,26 @@ public class MainController
 	}
 	
 	@RequestMapping("case")
-	public ModelAndView cases() {
-		return new ModelAndView("fore/case");
+	public ModelAndView cases(String type) {
+		//真实案例，默认进入‘立体发光字工程’
+		if(null==type||"".equals(type))
+		{
+			type="14";
+		}
+		PictureType pictureType = PictureType.GENERATOR.getByIndex(Integer.valueOf(type));
+		List<PictureRecord> picture_list = dsl.selectFrom(PICTURE).where(PICTURE.TYPE.eq(pictureType)).and(PICTURE.GROUP_ID.eq(Param.CASE_GROUP_ID)).fetchInto(PictureRecord.class);
+		return new ModelAndView("fore/case").addObject(Param.PICTURE_LIST, picture_list);
 	}
 	
 	@RequestMapping("contact")
-	public ModelAndView contact() {
+	public ModelAndView contact()
+	{
 		return new ModelAndView("fore/contact");
 	}
 	
 	@RequestMapping("joinus")
-	public ModelAndView joinus() {
+	public ModelAndView joinus() 
+	{
 		return new ModelAndView("fore/joinus");
-	}
-	
-	@RequestMapping("topbar")
-	public ModelAndView topbar() {
-		return new ModelAndView("fore/topbar");
 	}
 }

@@ -92,12 +92,12 @@
                     </li>
                     <li>
                         <ul class="inner">
-                            <li><a href="/index.php/52b432e507f">立体发光字工程</a></li>
-                            <li><a href="/index.php/52aec02607f">楼盘包装及工地围栏工程</a></li>
-                            <li><a href="/index.php/52aec42d07f">大型广告牌工程</a></li>
-                            <li><a href="/index.php/52aec57d07f">外立面灯箱工程</a></li>
-							<li><a href="/index.php/52aec57d07f">导视系统工程</a></li>
- 							<li><a href="/index.php/52aec57d07f">标识标牌工程</a></li>
+                            <li><a href="/case?type=14">立体发光字工程</a></li>
+                            <li><a href="/case?type=15">楼盘包装及工地围栏工程</a></li>
+                            <li><a href="/case?type=13">大型广告牌工程</a></li>
+                            <li><a href="/case?type=16">外立面灯箱工程</a></li>
+							<li><a href="/case?type=12">导视系统工程</a></li>
+ 							<li><a href="/case?type=11">标识标牌工程</a></li>
                         </ul>
                     </li>
                     <li>

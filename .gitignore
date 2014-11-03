@@ -16,3 +16,4 @@ rebel.xml
 .idea
 *.iml
 target
+database.properties

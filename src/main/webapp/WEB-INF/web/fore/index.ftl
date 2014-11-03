@@ -1,27 +1,9 @@
 ﻿<!doctype html>
 <html>
-<meta charset="utf-8">
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 <title>武汉汇海天下广告有限责任公司</title>
-
+<@d.head/>
 <script type="text/javascript" src="/js/4ce26076e427402e8daf3118ab8b3174.js"></script>
-<script type="text/javascript" src="/js/searchinfowindow_min.js"></script>
-<script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="/js/slide.js"></script>
-<script type="text/javascript" src="/js/common.js"></script>
-<script type="text/javascript" src="/js/jwplayer.js"></script>
-<link rel="shortcut icon" type="image/x-icon" href="../../../picture/32X32ico.ico" >
-
-
-<link rel="stylesheet" href="/css/searchinfowindow_min.css" />
-<link type="text/css" href="/css/api.css" rel="stylesheet" />
-
-
-
-<link type="text/css" href="/css/style_1.css" rel="stylesheet" />
-
 <link rel="stylesheet" href="/css/responsiveslides.css">
-
 <link rel="stylesheet" href="/css/style3.css">
 <script type="text/javascript" src="/js/responsiveslides.min.js"></script>
 <script type="text/javascript">
@@ -58,7 +40,7 @@ $(function () {
 </head>
 <body>
 <!--导入头部导航-->
-<#include "topbar.ftl">
+<@d.top/>
 <!--导入头部导航 end-->
 
     <!--通栏轮播图-->
@@ -185,7 +167,7 @@ $(function () {
 <!-- /永达案例 -->
 
 <!--footer-->
-<#include "footer.ftl">
+<@d.foot/>
 <!--/footer-->
 </body>
 </html>

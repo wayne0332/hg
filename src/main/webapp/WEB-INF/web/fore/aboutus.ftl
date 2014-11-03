@@ -1,33 +1,13 @@
 ﻿<!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 <title>武汉汇海天下广告有限责任公司</title>
-<link rel="shortcut icon" type="image/x-icon" href="../../../picture/32X32ico.ico" >
-<script type="text/javascript" src="js/7d4da6228f2b470cb2eaaa5822c08aad.js"></script>
-<script type="text/javascript" src="js/searchinfowindow_min.js"></script>
-<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="js/slide.js"></script>
-<script type="text/javascript" src="js/common.js"></script>
-<script type="text/javascript" src="js/jwplayer.js"></script>
-
-
-
-<link rel="stylesheet" href="css/searchinfowindow_min.css" />
-<link type="text/css" href="css/api.css" rel="stylesheet" />
-
-<link type="text/css" href="css/style.css" rel="stylesheet" />  
-
-<link type="text/css" href="css/style_1.css" rel="stylesheet" />
-
-
-<link href="css/move.css" type="text/css" rel="stylesheet" />
+<@d.head/>
 </head>
 <body>
 
 <!--导入头部导航-->
-<#include "topbar.ftl">
+<@d.top/>
 <!--导入头部导航 end-->
 
 
@@ -46,12 +26,6 @@
 		<div class="text">
 			<h2><a href="/aboutus" target="_blank">公司简介</a></h2>
 			<h3>home</h3>
-		</div>
-	</li>
-	<li>
-		<div class="text">
-			<h2><a href="http://www.17sucai.com/" target="_blank">发展历程</a></h2>
-			<h3>contact us</h3>
 		</div>
 	</li>
 	<li>
@@ -103,7 +77,7 @@
 	
     
    <!--footer-->
-<#include "footer.ftl">
+<@d.foot/>
 <!--/footer-->
     
     

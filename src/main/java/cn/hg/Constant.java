@@ -16,5 +16,11 @@ public class Constant {
 		public static final Integer CASE_GROUP_ID =2;
 		
 		public static final Integer LOGO_GROUP_ID = 3;
+		
+		public static final String RECRUIT_LIST = "recruit_list";
+		
+		public static final String RECRUIT_RECORD = "recruit_record";
+		
+		public static final String RECRUIT_DESCRIPTION = "recruit_description";
 	}
 }

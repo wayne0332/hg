@@ -10,6 +10,7 @@ import cn.hg.constant.ManagerType;
 import cn.hg.constant.PictureType;
 import cn.hg.jooq.tables.records.DescriptionRecord;
 import cn.hg.jooq.tables.records.PictureRecord;
+import cn.hg.jooq.tables.records.RecruitRecord;
 import cn.hg.pojo.Picture;
 
 import org.jooq.DSLContext;
@@ -23,6 +24,8 @@ import javax.annotation.Resource;
 
 import static cn.hg.jooq.tables.Description.DESCRIPTION;
 import static cn.hg.jooq.tables.Picture.PICTURE;
+import static cn.hg.jooq.tables.Recruit.RECRUIT;
+import static cn.hg.jooq.tables.Description.DESCRIPTION;
 
 @RestController
 public class MainController
@@ -93,8 +96,15 @@ public class MainController
 	}
 	
 	@RequestMapping("joinus")
-	public ModelAndView joinus() 
+	public ModelAndView joinus(String type) 
 	{
-		return new ModelAndView("fore/joinus");
+		List<RecruitRecord> recruit_list = dsl.selectFrom(RECRUIT).orderBy(RECRUIT.ID).fetchInto(RecruitRecord.class);
+		if(null==type||"".equals(type))
+		{
+			type = recruit_list.size()>0?recruit_list.get(0).getId()+"":0+"";
+		}
+		RecruitRecord recruitRecord = dsl.selectFrom(RECRUIT).where(RECRUIT.ID.eq(Integer.valueOf(type))).fetchOne();
+		String description  = dsl.selectFrom(DESCRIPTION).where(DESCRIPTION.ID.eq(recruitRecord.getDescriptionId())).fetchOne().getText();
+		return new ModelAndView("fore/joinus").addObject(Param.RECRUIT_LIST,recruit_list).addObject(Param.RECRUIT_RECORD,recruitRecord).addObject(Param.RECRUIT_DESCRIPTION,description);
 	}
 }

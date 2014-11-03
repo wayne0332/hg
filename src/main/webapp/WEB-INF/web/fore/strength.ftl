@@ -1,39 +1,17 @@
 ﻿<!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
 <title>武汉汇海天下广告有限责任公司</title>
-<link rel="shortcut icon" type="image/x-icon" href="../../../picture/32X32ico.ico" >
-<script type="text/javascript" src="js/7d4da6228f2b470cb2eaaa5822c08aad.js"></script>
-<script type="text/javascript" src="js/searchinfowindow_min.js"></script>
-<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="js/slide.js"></script>
-<script type="text/javascript" src="js/common.js"></script>
-<script type="text/javascript" src="js/jwplayer.js"></script>
-<script type="text/javascript" src="js/jquery.flexslider.js"></script>
+<@d.head/>
 
 
-<link rel="stylesheet" href="css/searchinfowindow_min.css" />
-<link type="text/css" href="css/api.css" rel="stylesheet" />
 
-<link type="text/css" href="css/style.css" rel="stylesheet" />  
-
-<link type="text/css" href="css/style_1.css" rel="stylesheet" />
-
-
-<link href="css/move.css" type="text/css" rel="stylesheet" />
-<link type="text/css" rel="stylesheet" href="css/flexslider.css" />
-<style type="text/css">
-/* ----- Slider ----- */
-.flexslider{margin-top:45px;margin-bottom:55px;border:6px solid #fff;-moz-border-radius:0;-webkit-border-radius:0;border-radius:0;-moz-box-shadow:0 5px 15px 0 rgba(0,0,0,.05),0 -5px 15px 0 rgba(0,0,0,.05);-webkit-box-shadow:0 5px 15px 0 rgba(0,0,0,.05),0 -5px 15px 0 rgba(0,0,0,.05);box-shadow:0 5px 15px 0 rgba(0,0,0,.05),0 -5px 15px 0 rgba(0,0,0,.05);}
-.flex-caption {position:absolute;bottom:20px;max-width:920px;padding:10px 20px;margin:0;background:#1d1d1d;/* browsers that don't support rgba */background:rgba(0, 0, 0, .7);font-size:14px;line-height:24px;color:#eaeaea;text-align:left;font-style:italic;}
-</style>
 </head>
 <body>
 
 <!--导入头部导航-->
-<#include "topbar.ftl">
+<@d.top/>
 <!--导入头部导航 end-->
 
 
@@ -123,17 +101,30 @@
 
 							</div>
 							
-							<div class="flexslider" >
-	<ul class="slides">
-	<#if picture_list?size!=0>
+<div class="detail_context_pic">
+	
+	<div class="detail_context_pic_top">
+		<a href="#"><img src="" alt="" id="pic1" curindex="0" /></a>
+		<a id="preArrow" href="javascript:void(0)" class="contextDiv" title="上一张"><span id="preArrow_A"></span></a>
+		<a id="nextArrow" href="javascript:void(0)" class="contextDiv" title="上一张"><span id="nextArrow_A"></span></a> 
+		<div id="miaoshuwarp">
+			<div class="miaoshu"></div>
+		</div>
+	</div>
+	
+	<div class="detail_context_pic_bot">
+		<div class="detail_picbot_left"><a href="javascript:void(0)" id="preArrow_B"><img src="images/left1.jpg" alt="上一个" /></a></div>
+		<div class="detail_picbot_mid">
+			<ul>
+			<#if picture_list?size!=0>
 		<#list picture_list as picture>
-			<li data-thumb="${picture.path}">
-			<img src="${picture.path}" height="397">
-			<p class="flex-caption">${picture.name}</p>
-		</li>
-		</#list>
-		</#if>
-	</ul>
+				<li><a href='javascript:void(0);'><img src='${picture.path}' width='90px' height='60px' title='${picture.name}' alt='${picture.name}' bigimg='${picture.path}' text='${picture.name}' /></a></li>
+			</#list>
+		</#if>		</ul>
+		</div>
+		<div class="detail_picbot_right"><a href="javascript:void(0)" id="nextArrow_B"><img src="images/right1.jpg" alt="下一个" /></a></div>
+	</div>
+	
 </div>
 		
 		</div>
@@ -145,7 +136,7 @@
 	<!-- mainbox结束 -->
 	
 <!--footer-->
-<#include "footer.ftl">
+<@d.foot/>
 <!--/footer-->
 <script type="text/javascript">
 $(window).load(function(){

@@ -36,6 +36,7 @@
                 <prop key="default_encoding">UTF-8</prop>
                 <prop key="url_escaping_charset">UTF-8</prop>
                 <prop key="whitespace_stripping">true</prop>
+                <prop key="auto_import">"/common/hhgg.html" as d</prop>
             </props>
         </property>
     </bean>

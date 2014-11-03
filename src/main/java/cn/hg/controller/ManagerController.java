@@ -46,6 +46,11 @@ public class ManagerController {
 		return new ModelAndView("back/main").addObject(Param.MANAGER, session.getAttribute(Param.MANAGER));
 	}
 
+	@RequestMapping(value = "/edit", method = RequestMethod.GET)
+	public ModelAndView edit() {
+		return new ModelAndView("back/wysiwyg-editors");
+	}
+
 	@RequestMapping("/testInsert")
 	@Transactional(propagation = Propagation.REQUIRED)
 	public ModelAndView test() {

@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>cn.hg</groupId>
-    <artifactId>web</artifactId>
+    <artifactId>hg</artifactId>
     <packaging>war</packaging>
     <version>1.0</version>
     <name>hq</name>
@@ -83,6 +83,13 @@
             <version>${jooqVersion}</version>
         </dependency>
         <!--jooq-->
+        <!--sitemesh-->
+        <dependency>
+            <groupId>org.sitemesh</groupId>
+            <artifactId>sitemesh</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <!--sitemesh-->
         <!--hibernate validator-->
         <dependency>
             <groupId>org.hibernate</groupId>

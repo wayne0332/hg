@@ -37,32 +37,31 @@
 	</li>
 </ul>
         </div>
-								
-        
+
+
     </div>
     <!--侧边栏导航 end -->
-		
 		<div id="content">
 			<div class="bread">
 				<h3><a href='/'>首页</a> &gt; <a href='/aboutus'>联系我们</a> &gt; <a href='/aboutus'>联系方式</a></h3>
 			</div>
-		
+
 			<div class="about ydjj">
-			<br />
-								<img src="picture/contact3.jpg">
-<p>
-	<br />
-</p>
-
-<div id="allmap"></div>
-
+        <h2>留言</h2>
+        <form action="/message" method="post">
+            <span>您的姓名 </span><input type="text" name="name" /><br>
+            <span>您的邮件 </span><input type="text" name="email" /><span> 或联系电话 </span><input type="text" name="phone" /><br>
+            <span>您的留言 </span><br>
+            <textarea name="content" rows="20" cols="100"></textarea>
+            <input type="submit" value="Submit" />
+        </form>
 							</div>
-		
+
 		</div>
 		<!-- content结束 -->
-		
+
 		<div class="clearfloat" ></div>
-		
+
 	</div>
 	<!-- mainbox结束 -->
 <!--footer-->
@@ -83,9 +82,9 @@
 	  enableMessage:true,//设置允许信息窗发送短息
 	  message:"武汉汇海天下广告有限公司"
 	}
-	var infoWindow = new BMap.InfoWindow("地址：武汉市武昌区临江大道60号", opts);  // 创建信息窗口对象 
+	var infoWindow = new BMap.InfoWindow("地址：武汉市武昌区临江大道60号", opts);  // 创建信息窗口对象
 	map.openInfoWindow(infoWindow,point); //开启信息窗口
-	marker.addEventListener("click", function(){          
+	marker.addEventListener("click", function(){
 		map.openInfoWindow(infoWindow,point); //开启信息窗口
 	});
 	map.addControl(new BMap.NavigationControl({type:BMAP_NAVIGATION_CONTROL_ZOOM}));

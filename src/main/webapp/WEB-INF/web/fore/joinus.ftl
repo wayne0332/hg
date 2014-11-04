@@ -19,7 +19,7 @@
 		<!--侧边栏导航 start -->
 	<div id="siderbar">
         <div id="sidernav">
-            <h2>社会招聘</h2>
+            <h2 class="head">社会招聘</h2>
    <ul class="list">
    <#if recruit_list?size!=0>
    	<#list recruit_list as recruit>

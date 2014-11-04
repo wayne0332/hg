@@ -1,31 +1,27 @@
 package cn.hg.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import cn.hg.Constant.Param;
-import cn.hg.constant.ConstantGenerator.Constant;
 import cn.hg.constant.DescriptionType;
-import cn.hg.constant.ManagerType;
 import cn.hg.constant.PictureType;
 import cn.hg.jooq.tables.records.DescriptionRecord;
 import cn.hg.jooq.tables.records.PictureRecord;
 import cn.hg.jooq.tables.records.RecruitRecord;
-import cn.hg.pojo.Picture;
-
+import cn.hg.pojo.Message;
 import org.jooq.DSLContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.List;
 
 import static cn.hg.jooq.tables.Description.DESCRIPTION;
 import static cn.hg.jooq.tables.Picture.PICTURE;
 import static cn.hg.jooq.tables.Recruit.RECRUIT;
-import static cn.hg.jooq.tables.Description.DESCRIPTION;
 
 @RestController
 public class MainController
@@ -56,7 +52,8 @@ public class MainController
 	@RequestMapping("aboutus")
 	public ModelAndView aboutus()
 	{
-		return new ModelAndView("fore/aboutus");
+		DescriptionRecord description = dsl.selectFrom(DESCRIPTION).where(DESCRIPTION.TYPE.equal(DescriptionType.INTRODUCE)).fetchOne();
+		return new ModelAndView("fore/aboutus").addObject("description", description);
 	}
 	
 	@RequestMapping("strength")
@@ -106,5 +103,15 @@ public class MainController
 		RecruitRecord recruitRecord = dsl.selectFrom(RECRUIT).where(RECRUIT.ID.eq(Integer.valueOf(type))).fetchOne();
 		String description  = dsl.selectFrom(DESCRIPTION).where(DESCRIPTION.ID.eq(recruitRecord.getDescriptionId())).fetchOne().getText();
 		return new ModelAndView("fore/joinus").addObject(Param.RECRUIT_LIST,recruit_list).addObject(Param.RECRUIT_RECORD,recruitRecord).addObject(Param.RECRUIT_DESCRIPTION,description);
+	}
+
+	@RequestMapping(value = "/message",method = RequestMethod.GET)
+	public ModelAndView message() {
+		return new ModelAndView("fore/message");
+	}
+
+	@RequestMapping(value = "/message",method = RequestMethod.POST)
+	public ModelAndView message(Message message) {
+		return new ModelAndView("fore/message");
 	}
 }

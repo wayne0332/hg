@@ -24,7 +24,7 @@
 		<!--侧边栏导航 start -->
 	<div id="siderbar">
         <div id="sidernav">
-            <h2>实力展示</h2>
+            <h2 class="head">实力展示</h2>
    <ul class="list">
 	<li>
 		<div class="text">

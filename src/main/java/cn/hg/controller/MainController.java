@@ -10,11 +10,11 @@ import cn.hg.pojo.Message;
 import org.jooq.DSLContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -102,11 +102,13 @@ public class MainController {
 
     @RequestMapping(value = "/message", method = RequestMethod.POST)
     public ModelAndView message(Message message) {
-        return new ModelAndView("redirect:/thanks/" + message.getName());
+	    RedirectView redirectView = new RedirectView("/thanks");
+	    redirectView.addStaticAttribute("name", message.getName());
+	    return new ModelAndView(redirectView);
     }
 
-    @RequestMapping(value = "/thanks/{name}", method = RequestMethod.GET)
-    public ModelAndView thanks(@PathVariable String name)
+    @RequestMapping(value = "/thanks", method = RequestMethod.GET)
+    public ModelAndView thanks(String name)
     {
         return new ModelAndView("fore/thanks").addObject("name", name);
     }

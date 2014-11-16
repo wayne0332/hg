@@ -2,6 +2,7 @@ package cn.hg.controller;
 
 import cn.hg.Constant.Param;
 import cn.hg.constant.DescriptionType;
+import cn.hg.constant.MessageStatus;
 import cn.hg.constant.PictureType;
 import cn.hg.jooq.tables.records.DescriptionRecord;
 import cn.hg.jooq.tables.records.PictureRecord;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static cn.hg.jooq.tables.Description.DESCRIPTION;
+import static cn.hg.jooq.tables.Message.MESSAGE;
 import static cn.hg.jooq.tables.Picture.PICTURE;
 import static cn.hg.jooq.tables.Recruit.RECRUIT;
 
@@ -102,6 +104,9 @@ public class MainController {
 
     @RequestMapping(value = "/message", method = RequestMethod.POST)
     public ModelAndView message(Message message) {
+	    dsl.insertInto(MESSAGE).set(MESSAGE.NAME, message.getName()).set(MESSAGE.EMAIL, message.getEmail())
+			    .set(MESSAGE.PHONE, message.getPhone()).set(MESSAGE.STATUS, MessageStatus.NOT_REPLAY)
+			    .set(MESSAGE.CONTENT, message.getContent()).execute();
 	    RedirectView redirectView = new RedirectView("/thanks");
 	    redirectView.addStaticAttribute("name", message.getName());
 	    return new ModelAndView(redirectView);

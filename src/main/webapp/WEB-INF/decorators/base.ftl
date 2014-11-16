@@ -1,15 +1,15 @@
-<#import "macroCommon.ftl" as macroCommon>
+<#import "/WEB-INF/web/back/macroResources.ftl" as macroResources>
+<#import "/WEB-INF/web/back/macroFramework.ftl" as macroFramework>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<@macroCommon.importhead title='${title}' head='${head}'/>
+    <title>${title} - 汇海天下</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<@macroResources.headResources/>
 </head>
-<body class="metro">
-<#if Session.student?? && Session.student.name??>
-    <@macroCommon.studentHead student=Session.student/>
-<#elseif Session.teacher?? && Session.teacher.name??>
-    <@macroCommon.teacherHead teacher=Session.teacher/>
-</#if>
-<@macroCommon.importBody body='${body}'/>
+<body>
+<@macroFramework.appendBody body=body/>
+<@macroResources.buttomResources/>
 </body>
 </html>

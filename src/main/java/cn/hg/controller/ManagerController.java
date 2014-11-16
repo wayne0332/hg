@@ -53,7 +53,7 @@ public class ManagerController {
 
 	@RequestMapping("/testInsert")
 	@Transactional(propagation = Propagation.REQUIRED)
-	public ModelAndView test() {
+	public ModelAndView testInsert() {
 		dsl.insertInto(MANAGER).set(MANAGER.NAME, "test").set(MANAGER.PASSWORD, "test").execute();
 		return new ModelAndView("main").addObject("test", dsl.selectFrom(MANAGER).where(MANAGER.NAME.equal("admin")).fetchOne(MANAGER.PASSWORD));
 	}

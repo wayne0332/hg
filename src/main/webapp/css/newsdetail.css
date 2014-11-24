@@ -10,7 +10,6 @@ p,ul,li,dl,dd,dt,form,h1,h2,h3,h4,h5,h6{list-style:none;}
 img{border:none;}
 a{outline:none;blr:expression(this.onFocus=this.blur());text-decoration:none;color:Black;}
 a:hover{ color:#ff5d11; text-decoration:underline;}
-img:hover{background: white;filter:alpha(opacity=80);-moz-opacity:0.8;-khtml-opacity: 0.8; opacity: 0.8;}
 
 /*图片轮播*/
 .detail_context_pic{width:680px;overflow:hidden;margin:20px auto;}

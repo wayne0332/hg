@@ -3,8 +3,47 @@
 <head>
 <title>武汉汇海天下广告有限责任公司</title>
 <@d.head/>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=VuTyZfAGQ01vwbpL7gALtH8B"></script>
-</script>
+<style>
+.mes{
+margin-top:50px;
+}
+
+input:focus,  textarea:focus {
+    border: 1px solid #f36e1d;
+}
+.form-group{
+margin:18px;
+font-size:18px;
+width:715px;
+}
+.form-control{
+padding:5px;
+border:1px gray solid;
+height:28px;
+width:350px;
+ border-radius:4px;
+}
+.form-control2{
+ border-radius:4px;
+padding:5px;
+border:1px gray solid;
+height:58px;
+width:350px;
+}
+.button{
+cursor: pointer;
+border:0px;
+ border-radius:4px;
+ background:#f36e1d;
+ width:80px;
+ height:40px;
+color:white;
+margin-left:230px;
+}
+label{
+margin:2px;
+}
+</style>
 </head>
 <body>
 <!--导入头部导航-->
@@ -14,7 +53,7 @@
 
 
 	<div id="banner1">
-		<img src="picture/52b160f707f.png" />
+		<img src="picture/contactus1.jpg" width="1425px" height="238px"/>
 	</div>
 
 	<div id="mainbox">
@@ -43,18 +82,32 @@
     <!--侧边栏导航 end -->
 		<div id="content">
 			<div class="bread">
-				<h3><a href='/'>首页</a> &gt; <a href='/aboutus'>联系我们</a> &gt; <a href='/aboutus'>联系方式</a></h3>
+				<h3><a href='/'>首页</a> &gt; <a href='/contact'>联系我们</a> &gt; <a href='/message'>留言</a></h3>
 			</div>
 
 			<div class="about ydjj">
         <h2>留言</h2>
+        <div class="mes">
         <form action="/message" method="post">
-            <span>您的姓名 </span><input type="text" name="name" /><br>
-            <span>您的邮件 </span><input type="text" name="email" /><span> 或联系电话 </span><input type="text" name="phone" /><br>
-            <span>您的留言 </span><br>
-            <textarea name="content" rows="20" cols="100"></textarea>
-            <input type="submit" value="Submit" />
+         <div class="form-group">
+ 		  <label for="name">您的姓名</label>
+   		 <input type="text" name="name"  class="form-control" id="name" >
+  		</div>
+  		 <div class="form-group">
+ 		  <label for="email">您的邮件</label>
+   		 <input type="email" name="email"  class="form-control" id="email" >
+  		</div>
+  		 <div class="form-group">
+ 		  <label for="phone">联系电话</label>
+   		 <input type="text" name="phone"  class="form-control" id="phone"  >
+  		</div>
+  		 <div class="form-group">
+ 		  <label for="content">您的留言</label>
+ 		  <textarea name="content" rows="20" cols="100" class="form-control2"></textarea>
+  		</div>
+            <input type="submit" class="button" value="提交" />
         </form>
+        </div>
 							</div>
 
 		</div>
@@ -67,27 +120,5 @@
 <!--footer-->
 <@d.foot/>
 <!--/footer-->
-
-<script type="text/javascript">
-	// 百度地图API功能
-	var map = new BMap.Map("allmap");
-	var point = new BMap.Point(114.305503,30.554765);
-	var marker = new BMap.Marker(point);  // 创建标注
-	map.addOverlay(marker);              // 将标注添加到地图中
-	map.centerAndZoom(point, 15);
-	var opts = {
-	  width : 200,     // 信息窗口宽度
-	  height: 100,     // 信息窗口高度
-	  title : "武汉汇海天下广告有限公司" , // 信息窗口标题
-	  enableMessage:true,//设置允许信息窗发送短息
-	  message:"武汉汇海天下广告有限公司"
-	}
-	var infoWindow = new BMap.InfoWindow("地址：武汉市武昌区临江大道60号", opts);  // 创建信息窗口对象
-	map.openInfoWindow(infoWindow,point); //开启信息窗口
-	marker.addEventListener("click", function(){
-		map.openInfoWindow(infoWindow,point); //开启信息窗口
-	});
-	map.addControl(new BMap.NavigationControl({type:BMAP_NAVIGATION_CONTROL_ZOOM}));
-</script>
 </body>
 </html>

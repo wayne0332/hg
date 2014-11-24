@@ -24,13 +24,13 @@
    <ul class="list">
 	<li>
 		<div class="text">
-			<h2><a href="/aboutus" target="_blank">公司简介</a></h2>
+			<h2><a href="/aboutus" >公司简介</a></h2>
 			<h3>home</h3>
 		</div>
 	</li>
 	<li>
 		<div class="text">
-			<h2><a href="http://www.17sucai.com/" target="_blank">服务客户</a></h2>
+			<h2><a href="/client" >服务客户</a></h2>
 			<h3>about us</h3>
 		</div>
 	</li>

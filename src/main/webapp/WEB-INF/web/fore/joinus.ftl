@@ -12,7 +12,7 @@
 
 
 	<div id="banner1">
-		<img src="picture/52b160f707f.png" />
+		<img src="picture/joinus3.jpg" width="1425px" height="238px"/>
 	</div>
 
 	<div id="mainbox">
@@ -40,7 +40,6 @@
 	<div id="content">
 			<div class="bread">
 				<h3><a href='/index.php/52a97b8a07f'>首页</a> &gt; <a href='/index.php/52aedcc907f'>社会招聘</a> </h3>
-				<p>人才招聘</p>
 			</div>
 		
 			<div class="joinus zp_content">

@@ -14,7 +14,7 @@
 
 
     <div id="banner1">
-            <img src="picture/52b160f707f.png" />
+ 		<img src="picture/contactus1.jpg" width="1425px" height="238px"/>
             </div>
 
     <div id="mainbox">
@@ -43,11 +43,12 @@
         <!--侧边栏导航 end -->
     <div id="content">
             <div class="bread">
-            <h3><a href='/'>首页</a> &gt; <a href='/aboutus'>联系我们</a> &gt; <a href='/aboutus'>联系方式</a></h3>
+				<h3><a href='/'>首页</a> &gt; <a href='/contact'>联系我们</a> &gt; <a href='/message'>留言</a></h3>
     </div>
 
     <div class="about ydjj">
-            <h2>${name} 感谢您的留言</h2>
+            <h2>${name} 感谢您的留言,我们会尽快联系您。</h2>
+            <h3 style="white-space:normal;">
     </div>
 
     </div>

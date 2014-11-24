@@ -8,6 +8,7 @@ import cn.hg.jooq.tables.records.DescriptionRecord;
 import cn.hg.jooq.tables.records.PictureRecord;
 import cn.hg.jooq.tables.records.RecruitRecord;
 import cn.hg.pojo.Message;
+
 import org.jooq.DSLContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +19,8 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 import javax.annotation.Resource;
+
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,19 +30,22 @@ import static cn.hg.jooq.tables.Picture.PICTURE;
 import static cn.hg.jooq.tables.Recruit.RECRUIT;
 
 @RestController
-public class MainController {
+public class MainController
+{
     private static final Logger LOGGER = LoggerFactory.getLogger(MainController.class);
 
     @Resource
     private DSLContext dsl;
 
     @RequestMapping("")
-    public ModelAndView index() {
+    public ModelAndView index() 
+    {
         //公司简介文字
         DescriptionRecord description = dsl.selectFrom(DESCRIPTION).where(DESCRIPTION.TYPE.equal(DescriptionType.INTRODUCE)).fetchOne();
         //logo及logo图片
         List<List<PictureRecord>> picture_bag = new ArrayList<List<PictureRecord>>();
-        for (int i = 17; i < 25; i++) {
+        for (int i = 17; i < 25; i++) 
+        {
             PictureType pt = PictureType.GENERATOR.getByIndex(i);
             List<PictureRecord> pl = dsl.selectFrom(PICTURE).where(PICTURE.TYPE.eq(pt)).and(PICTURE.GROUP_ID.eq(Param.LOGO_GROUP_ID)).fetchInto(PictureRecord.class);
             picture_bag.add(pl);
@@ -50,21 +56,25 @@ public class MainController {
     }
 
     @RequestMapping("aboutus")
-    public ModelAndView aboutus() {
+    public ModelAndView aboutus() 
+    {
         DescriptionRecord description = dsl.selectFrom(DESCRIPTION).where(DESCRIPTION.TYPE.equal(DescriptionType.INTRODUCE)).fetchOne();
         return new ModelAndView("fore/aboutus").addObject("description", description);
     }
 
     @RequestMapping("strength")
-    public ModelAndView strength(String type) {
+    public ModelAndView strength(String type) 
+    {
         //默认进入‘钣金车间’
-        if (null == type || "".equals(type)) {
+        if (null == type || "".equals(type)) 
+        {
             type = "1";
         }
         PictureType pictureType = PictureType.GENERATOR.getByIndex(Integer.valueOf(type));
         List<PictureRecord> picture_list = dsl.selectFrom(PICTURE).where(PICTURE.TYPE.eq(pictureType)).and(PICTURE.GROUP_ID.eq(Param.STREGTH_GROUP_ID)).fetchInto(PictureRecord.class);
         //前台最多显示4张图片
-        if (picture_list.size() > 4) {
+        if (picture_list.size() > 4) 
+        {
             picture_list = picture_list.subList(0, 3);
         }
         return new ModelAndView("fore/strength").addObject(Param.PICTURE_LIST, picture_list);
@@ -73,23 +83,28 @@ public class MainController {
     @RequestMapping("case")
     public ModelAndView cases(String type) {
         //真实案例，默认进入‘立体发光字工程’
-        if (null == type || "".equals(type)) {
+        if (null == type || "".equals(type))
+        {
             type = "14";
         }
         PictureType pictureType = PictureType.GENERATOR.getByIndex(Integer.valueOf(type));
+      
         List<PictureRecord> picture_list = dsl.selectFrom(PICTURE).where(PICTURE.TYPE.eq(pictureType)).and(PICTURE.GROUP_ID.eq(Param.CASE_GROUP_ID)).fetchInto(PictureRecord.class);
         return new ModelAndView("fore/case").addObject(Param.PICTURE_LIST, picture_list);
     }
 
     @RequestMapping("contact")
-    public ModelAndView contact() {
+    public ModelAndView contact() 
+    {
         return new ModelAndView("fore/contact");
     }
 
     @RequestMapping("joinus")
-    public ModelAndView joinus(String type) {
+    public ModelAndView joinus(String type) 
+    {
         List<RecruitRecord> recruit_list = dsl.selectFrom(RECRUIT).orderBy(RECRUIT.ID).fetchInto(RecruitRecord.class);
-        if (null == type || "".equals(type)) {
+        if (null == type || "".equals(type))
+        {
             type = recruit_list.size() > 0 ? recruit_list.get(0).getId() + "" : 0 + "";
         }
         RecruitRecord recruitRecord = dsl.selectFrom(RECRUIT).where(RECRUIT.ID.eq(Integer.valueOf(type))).fetchOne();
@@ -98,12 +113,14 @@ public class MainController {
     }
 
     @RequestMapping(value = "/message", method = RequestMethod.GET)
-    public ModelAndView message() {
+    public ModelAndView message() 
+    {
         return new ModelAndView("fore/message");
     }
 
     @RequestMapping(value = "/message", method = RequestMethod.POST)
-    public ModelAndView message(Message message) {
+    public ModelAndView message(Message message) 
+    {
 	    dsl.insertInto(MESSAGE).set(MESSAGE.NAME, message.getName()).set(MESSAGE.EMAIL, message.getEmail())
 			    .set(MESSAGE.PHONE, message.getPhone()).set(MESSAGE.STATUS, MessageStatus.NOT_REPLAY)
 			    .set(MESSAGE.CONTENT, message.getContent()).execute();
@@ -113,8 +130,22 @@ public class MainController {
     }
 
     @RequestMapping(value = "/thanks", method = RequestMethod.GET)
-    public ModelAndView thanks(String name)
+    public ModelAndView thanks(String name) throws Exception
     {
-        return new ModelAndView("fore/thanks").addObject("name", name);
+        return new ModelAndView("fore/thanks").addObject("name", new String(name.getBytes("ISO-8859-1"),"UTF-8"));
+    }
+    
+    @RequestMapping("client")
+    public ModelAndView client()
+    {
+        //logo及logo图片
+        List<List<PictureRecord>> picture_bag = new ArrayList<List<PictureRecord>>();
+        for (int i = 17; i < 25; i++) 
+        {
+            PictureType pt = PictureType.GENERATOR.getByIndex(i);
+            List<PictureRecord> pl = dsl.selectFrom(PICTURE).where(PICTURE.TYPE.eq(pt)).and(PICTURE.GROUP_ID.eq(Param.LOGO_GROUP_ID)).fetchInto(PictureRecord.class);
+            picture_bag.add(pl);
+        }
+    	return new ModelAndView("fore/client").addObject(Param.PICTURE_BAG, picture_bag);
     }
 }

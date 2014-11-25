@@ -17,7 +17,7 @@
 
 
 	<div id="banner1">
-			<img src="picture/strength3.jpg" width="1425px" height="238px"/>┌┘
+			<img src="picture/strength3.jpg" width="1425px" height="238px"/>
 	</div>
 
 	<div id="mainbox">

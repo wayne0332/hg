@@ -1,5 +1,7 @@
 package cn.hg.controller;
 
+import cn.hg.constant.DescriptionType;
+import cn.hg.jooq.tables.records.DescriptionRecord;
 import cn.hg.jooq.tables.records.ManagerRecord;
 import cn.hg.pojo.Manager;
 import org.jooq.DSLContext;
@@ -15,6 +17,7 @@ import javax.servlet.http.HttpSession;
 
 import static cn.hg.Constant.Param;
 import static cn.hg.jooq.Tables.MANAGER;
+import static cn.hg.jooq.tables.Description.DESCRIPTION;
 
 @RestController
 @RequestMapping("/manager")
@@ -36,14 +39,15 @@ public class ManagerController {
 		ManagerRecord manager = dsl.selectFrom(MANAGER).where(MANAGER.NAME.equal(user.getName())).and(MANAGER.PASSWORD.equal(user.getPassword())).fetchOne();
 		if (manager != null) {
 			session.setAttribute(Param.MANAGER, manager);
-			return new ModelAndView("redirect:/manager/main").addObject(Param.MANAGER, manager);
+			return new ModelAndView("redirect:/manager/aboutUs").addObject(Param.MANAGER, manager);
 		}
 		return new ModelAndView("redirect:/manager/login");
 	}
 
-	@RequestMapping(value = "/main", method = RequestMethod.GET)
+	@RequestMapping(value = "/aboutUs", method = RequestMethod.GET)
 	public ModelAndView main() {
-		return new ModelAndView("back/main").addObject(Param.MANAGER, session.getAttribute(Param.MANAGER));
+		DescriptionRecord description = dsl.selectFrom(DESCRIPTION).where(DESCRIPTION.TYPE.equal(DescriptionType.INTRODUCE)).fetchOne();
+		return new ModelAndView("back/aboutUs").addObject("description", description).addObject(Param.MANAGER, session.getAttribute(Param.MANAGER));
 	}
 
 	@RequestMapping(value = "/edit", method = RequestMethod.GET)

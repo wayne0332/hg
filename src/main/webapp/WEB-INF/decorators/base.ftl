@@ -6,10 +6,10 @@
     <title>${title} - 汇海天下</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<@macroResources.headResources/>
+<@macroResources.cssResources/>
+<@macroResources.jsResources/>
 </head>
 <body>
 <@macroFramework.appendBody body=body/>
-<@macroResources.buttomResources/>
 </body>
 </html>

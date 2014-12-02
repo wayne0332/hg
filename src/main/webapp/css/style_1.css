@@ -73,11 +73,12 @@ p{word-wrap:break-word}
 ===================================*/
 /* head.css */
 #topline{ height:8px; background:#f37426;}
-#mainnav{ width:1000px; height:96px; margin:0 auto; position: relative;}
-#logo{ width:129px; height:64px; float:left; margin-top:30px;}
-#mainnav .right{ float: right; width: 757px;}
+#mainnav{ width:1250px; height:56px; margin:10px auto;  position: relative;}
+#logo{ width:129px; height:44px; float:left; margin-top:25x;margin-left: 100px}
+#mainnav .right{ float: right; width: 757px;margin-left: 100px;margin-top: 0px;}
+#mainnav .right ul{ margin-left: 70px;}
 
-#nav{ width: 757px; height: 20px; float: right; margin: 25px 0 0 0; text-align: right; overflow: visible;}
+#nav{ width: 757px; height: 20px; float: right; margin: 35px 0 0 310px; text-align: right; overflow: visible;}
 #nav a{color:#333; font-size: 14px; font-weight: normal; text-decoration: none;}
 #nav a:hover{color:#f36e1d;}
 #nav .nav_last{ border-right:none;}
@@ -99,7 +100,7 @@ p{word-wrap:break-word}
 #banner1{ width:1425px; height:238px; margin:15px auto 0;}
 
 /*nav list*/
-.nav_list{position: absolute; right: 111px; top: 93px; right: 0; width: 757px; z-index: 9999999;}
+.nav_list{position: absolute; right: 71px; top: 53px; width: 757px; z-index: 9999999;} 
 div.nav_list ul li{display: block; width: 108px; min-height: 1px; float: left; text-align: center;}
 div.nav_list ul.inner{display: none; min-height: 1px; width: 107px; padding-top: 18px;}
 div.nav_list ul.inner li{background-color: #fff; height: 40px; line-height: 40px; border-top: 1px dashed #CCD0DC; cursor: pointer;}
@@ -112,18 +113,21 @@ div.nav_list ul.inner li a:hover{color: #fff;}
 div.nav_list ul.show_li{display: block;}
 
 /* foot.css */
-#foot{ width:600px; margin:40px auto 0; font:12px;}
-#foot .top{ height:110px;}
-#foot .left{ width:960px; height:110px;}
+#foot{ width:800px; margin:40px auto 0; font:12px;} 
+#foot .top{ height:40px;}
+#foot .left{ width:960px; height:40px;}
 #foot .left h3{color:#434343; background:url(../images/ico1.png) 0 7px no-repeat; position:relative; left:-9px; padding-left:10px; font:14px '微软雅黑';}
-#foot .left a{ color:#b8b8b8;}
-#foot .left ul{float:left; margin-right:40px; margin-left:10px; line-height:22px;}
+#foot .left { color:#666666;}
+#foot .left ul{float:left; width:240px;margin-right:40px; margin-left:10px; line-height:22px;}
+#foot .left ul li img{width:44px;height: 44px;float:left;}
+#foot .left ul li {padding-left: 30px;}
 
 #foot .right{ width:240px; height:110px; float:right;}
 #foot .right h3{ width:50px; height:26px; line-height:26px; font:normal; float:right; font-size:14px;}
 #foot .right .weixin{ float:right; width:91px; height:px;}
 #foot .right ul{ width:180px; float:right;}
 #foot .right li{ width:26px; height:26px; margin-left:10px; float:left; display:inline; overflow:hidden;}
+
 
 #foot .right .share1{ background:url(../images/weibo.png) 0 -26px no-repeat;}
 #foot .right .share2{ background:url(../images/weibo.png) -26px -26px no-repeat;}

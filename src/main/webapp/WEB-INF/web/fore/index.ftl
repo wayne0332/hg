@@ -20,7 +20,7 @@ $(function () {
 	auto: false,
 	pager: false,
 	nav: true,
-	speed: 500,
+	speed: 200,
 	namespace: "callbacks",
 	before: function () {
 	  $('.events').append("<li>before event fired.</li>");
@@ -50,13 +50,13 @@ $(function () {
         <div class="bd">
             <ul>
                                 <li>
-                    <a href="/activity.php"><img src="picture/54081c9e03a.jpg" /></a>
+                     <a href="#"><img src="picture/52b947d20a.png" /></a>
                 </li>
                                 <li>
-                    <a href="/index.php/52aec02607f"><img src="picture/54081c9e03a.jpg" /></a>
+                      <a href="#"><img src="picture/52b947d20a.png" /></a>
                 </li>
                                 <li>
-                    <a href="/index.php/52b432e507f"><img src="picture/52b947d20a.png" /></a>
+                    <a href="#"><img src="picture/52b947d20a.png" /></a>
                 </li>
                                 <li>
                     <a href="##"><img src="picture/52b947de0a.png" /></a>
@@ -74,7 +74,7 @@ $(function () {
     <div class="left">
         <h3><span><a href="/aboutus"> more </a></span>公司简介</h3>
 			<div id="indexScroll">
-                <span>${description.text}</span>
+                <span style="color:#222222;">${description.text}</span>
            </div>
         <script>
 			var aboutTime = setInterval("autoScroll()",100);
@@ -111,11 +111,9 @@ $(function () {
 <!-- 服务客户 -->
 <div class="slide-head">
     <h2>服务客户</h2>
-    <span><a href="#"> more </a></span>
+    <span><a href="/client"> more </a></span>
 </div>
 <div class="slide-box" style="margin-top:10px;">
-    <a class="prev" href="javascript:void(0)"></a>
-    <a class="next" href="javascript:void(0)"></a>  
     <div class="bd">
         
                     <ul>

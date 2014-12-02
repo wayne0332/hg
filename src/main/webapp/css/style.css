@@ -70,14 +70,6 @@ p{word-wrap:break-word}
 /*public.css
 ===================================*/
 /* head.css */
-#topline{ height:8px; background:#f37426;}
-#mainnav{ width:1000px; height:96px; margin:0 auto;}
-#logo{ width:129px; height:64px; float:left; margin-top:16px;}
-#nav{ width:650px; float:right; padding-top:55px;}
-#nav a{color:#333;}
-#nav a:hover{color:#f36e1d;}
-#nav .nav_last{ border-right:none;}
-#nav li{ width:107px; text-align:center; float:left; border-right:1px solid #ccc; line-height:11px; height:11px;}
 
 #banner{ width:1426px; height:419px; margin:0 auto; overflow:hidden;}
 #banner ul{ height:419px; height:419px;}
@@ -88,12 +80,6 @@ p{word-wrap:break-word}
 
 
 /* foot.css */
-#foot{ width:1000px; margin:60px auto 0; font:12px;}
-#foot .top{ height:110px;}
-#foot .left{ width:900px; height:110px; float:left;}
-#foot .left h3{color:#434343; background:url(../images/ico1.png) 0 7px no-repeat; position:relative; left:-9px; padding-left:10px; font:14px '微软雅黑';}
-#foot .left a{ color:#b8b8b8;}
-#foot .left ul{float:left; margin-right:40px; margin-left:10px; line-height:22px;}
 
 #foot .right{ width:300px; height:110px; float:right;}
 #foot .right h3{ width:50px; height:26px; line-height:26px; font:normal; float:right; font-size:14px;}

@@ -3,7 +3,6 @@
 <head>
     <title>武汉汇海天下广告有限责任公司</title>
 <@d.head/>
-    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=VuTyZfAGQ01vwbpL7gALtH8B"></script>
     </script>
     </head>
     <body>

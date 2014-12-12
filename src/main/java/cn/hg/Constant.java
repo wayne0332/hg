@@ -9,6 +9,8 @@ public class Constant {
 		
 		public static final String PICTURE_LIST = "picture_list";
 		
+		public static final String PICTURE_BAR= "picture_bar";
+		
 		public static final String PICTURE_BAG = "picture_bag";
 		
 		public static final Integer STREGTH_GROUP_ID = 1;
@@ -22,5 +24,7 @@ public class Constant {
 		public static final String RECRUIT_RECORD = "recruit_record";
 		
 		public static final String RECRUIT_DESCRIPTION = "recruit_description";
+		
+		public static final String MESSAGE_LIST ="message_list";
 	}
 }

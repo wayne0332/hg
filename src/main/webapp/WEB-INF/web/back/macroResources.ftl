@@ -9,6 +9,12 @@
 <!-- Bootstrap Admin Theme -->
 <link rel="stylesheet" media="screen" href="/css/bootstrap-admin-theme.css">
 <link rel="stylesheet" media="screen" href="/css/bootstrap-admin-theme-change-size.css">
+
+<!--My Css -->
+<link rel="stylesheet" media="screen" href="/css/mycss_back.css">
+
+<#import "/spring.ftl" as spring/>  
+
 ${head}
 </#macro>
 <#macro jsResources>

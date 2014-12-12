@@ -1,9 +1,10 @@
 package cn.hg.constant;
 
 public enum PictureType implements ConstantGenerator.Constant {
-	BANJIN(1,"钣金车间"),BAOZHUANG(2,"包装车间"),DIAOKE(3,"包装车间"),DIAOZHUANG(4,"吊装车间"),
-	JIGUANGDIAOKE(5,"激光雕刻车间"),JIGUANGQIEGE(6,"激光切割车间"),PENYIN(7,"喷印车间"),
-	ZHIZI(8,"制字车间"),ZUZHUANG(9,"组装车间"),SHEJISHIWUSUO(10,"设计事务所"),
+	//实力展示栏目提供10个类别
+	ST1(1,"ST1"),ST2(2,"ST2"),ST3(3,"ST3"),ST4(4,"ST4"),
+	ST5(5,"ST5"),ST6(6,"ST6"),ST7(7,"ST7"),
+	ST8(8,"ST8"),ST9(9,"ST9"),ST10(10,"ST10"),
 	
 	BIAOSHIBIAOPAI(11,"标识标牌工程"),DAOSHIXITONG(12,"导视系统工程"),GUANGGAOPAI(13,"大型广告牌工程"),
 	LITIFAGUANGZI(14,"立体发光字工程"),LOUPAN(15,"楼盘包装及工地围栏工程"),WAILIMIANDENGXIANG(16,"外立面灯箱工程"),

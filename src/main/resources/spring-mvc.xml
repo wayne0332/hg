@@ -22,6 +22,7 @@
         <property name="exposeSessionAttributes" value="true" />
         <property name="exposeSpringMacroHelpers" value="true" />
         <property name="allowSessionOverride" value="true"/>
+        <property name="requestContextAttribute" value="request"></property>
     </bean>
     <bean id="freemarkerConfig"
           class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">

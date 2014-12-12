@@ -68,7 +68,13 @@
                     <a href="/manager/aboutUs"><i class="glyphicon glyphicon-chevron-right"></i>简介</a>
                 </li>
                 <li>
-                    <a href="dashboard.html"><i class="glyphicon glyphicon-chevron-right"></i> Dashboard</a>
+                    <a href="/manager/strength"><i class="glyphicon glyphicon-chevron-right"></i> 实力展示 </a>
+                </li>
+               <li>
+                    <a href="/manager/joinus"><i class="glyphicon glyphicon-chevron-right"></i> 社会招聘 </a>
+                </li>
+              <li>
+                    <a href="/manager/message"><i class="glyphicon glyphicon-chevron-right"></i> 留言管理 </a>
                 </li>
                 <li class="disabled">
                     <a href="#"><i class="glyphicon glyphicon-chevron-right"></i> Calendar</a><!-- calendar.html -->

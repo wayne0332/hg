@@ -1,0 +1,57 @@
+﻿.ui_btn_1{
+    	font-size:15px;
+    	color:white;
+    	width:170px;
+    	height:40px;
+    	background-color:#0099FF;
+    	border:0px;
+    	}
+    	
+    	.ui_inp_1{
+    	font-size:15px;
+    	color:black;
+    	width:170px;
+    	height:40px;
+    	border:1px solid #0099FF;
+    	text-align:center;
+    	}
+    	
+    	.btn_bianji{
+    	background-color:#00FF99;
+    	}
+    	.btn_delete{
+    	background-color:#CCFF00;
+    	}
+    	img{
+    	margin:7px;border:solid 0px #666666;
+    	}
+    	
+    	#leibie_ul div{
+    	margin-top:-9px;
+    	position:relative;
+    	width:170px;
+    	height:40px;
+    	display: none;
+    	}
+    	
+    	#leibie_ul li{
+    	height:60px;
+    	}
+    	
+    	
+    	.ul_delete{
+    	width:20px;
+    	height:20px;
+    	position:absolute;
+    	top:-17px;
+    	left:151px;
+    	cursor:pointer;
+    	}
+    	 .ul_save{
+    	width:17px;
+    	height:17px;
+    	position:absolute;
+    	top:-17px;
+    	left:-15px;
+    	cursor:pointer;
+    	}

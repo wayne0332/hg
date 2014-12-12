@@ -37,7 +37,7 @@ public class CodeGenerator {
 
 	private static void initTarget(Generator generator) {
 		Target target = new Target();
-		target.setDirectory("/Users/Jason/work/hg/src/main/java");
+		target.setDirectory("/Users/Jesse/git/hg/src/main/java");
 		target.setPackageName("cn.hg.jooq");
 		generator.setTarget(target);
 	}

@@ -26,64 +26,13 @@
         <div id="sidernav">
             <h2 class="head">实力展示</h2>
    <ul class="list">
-	<li>
+   <#list picture_bar as bar>
+   	<li>
 		<div class="text">
-			<h2><a  href="/strength?type=1">钣金车间</a></h2>
-			<h3>home</h3>
+			<h2><a  href="/strength?type=${bar.type}">${bar.name}</a></h2>
 		</div>
 	</li>
-	<li>
-		<div class="text">
-			<h2><a href="/strength?type=2">包装车间</a></h2>
-			
-		</div>
-	</li>
-	<li>
-		<div class="text">
-			<h2><a href="/strength?type=3">雕刻车间</a></h2>
-		</div>
-	</li>
-	<li>
-		<div class="text">
-			<h2><a href="/strength?type=4">吊装车间</a></h2>
-			
-		</div>
-	</li>
-	<li>
-		<div class="text">
-			<h2><a href="/strength?type=5">激光雕刻车间</a></h2>
-			
-		</div>
-	</li>
-	<li>
-		<div class="text">
-			<h2><a href="/strength?type=6">激光切割车间</a></h2>
-			
-		</div>
-	</li>
-	<li>
-		<div class="text">
-			<h2><a href="/strength?type=7">喷印车间</a></h2>
-			
-		</div>
-	</li>
-	<li>
-		<div class="text">
-			<h2><a href="/strength?type=8">制字车间</a></h2>
-			
-		</div>
-	</li>
-	<li>
-		<div class="text">
-			<h2><a href="/strength?type=9">组装车间</a></h2>
-			
-		</div>
-	</li>
-	<li>
-		<div class="text">
-			<h2><a href="/strength?type=10">设计事务所</a></h2>
-		</div>
-	</li>
+   </#list>
 </ul>
         </div>
 								

@@ -65,19 +65,22 @@ public class MainController
     @RequestMapping("strength")
     public ModelAndView strength(String type) 
     {
+    	PictureType pictureType = null;
         //默认进入‘钣金车间’
         if (null == type || "".equals(type)) 
         {
-            type = "1";
+            type = "ST1";
         }
-        PictureType pictureType = PictureType.GENERATOR.getByIndex(Integer.valueOf(type));
+        pictureType = PictureType.GENERATOR.getByName(type);
         List<PictureRecord> picture_list = dsl.selectFrom(PICTURE).where(PICTURE.TYPE.eq(pictureType)).and(PICTURE.GROUP_ID.eq(Param.STREGTH_GROUP_ID)).fetchInto(PictureRecord.class);
-        //前台最多显示4张图片
+       //查询所有栏目
+        List<PictureRecord> picture_bar = dsl.selectFrom(PICTURE).where(PICTURE.GROUP_ID.eq(Param.STREGTH_GROUP_ID)).groupBy(PICTURE.TYPE).orderBy(PICTURE.TYPE).fetchInto(PictureRecord.class);
+/*        //前台最多显示4张图片
         if (picture_list.size() > 4) 
         {
             picture_list = picture_list.subList(0, 3);
-        }
-        return new ModelAndView("fore/strength").addObject(Param.PICTURE_LIST, picture_list);
+        }*/
+        return new ModelAndView("fore/strength").addObject(Param.PICTURE_LIST, picture_list).addObject(Param.PICTURE_BAR,picture_bar);
     }
 
     @RequestMapping("case")

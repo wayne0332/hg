@@ -11,7 +11,7 @@ package cn.hg.jooq.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Group extends org.jooq.impl.TableImpl<cn.hg.jooq.tables.records.GroupRecord> {
 
-	private static final long serialVersionUID = 576902103;
+	private static final long serialVersionUID = 528568145;
 
 	/**
 	 * The singleton instance of <code>hg.group</code>
@@ -45,6 +45,16 @@ public class Group extends org.jooq.impl.TableImpl<cn.hg.jooq.tables.records.Gro
 	 * The column <code>hg.group.time_stamp</code>.
 	 */
 	public final org.jooq.TableField<cn.hg.jooq.tables.records.GroupRecord, java.sql.Timestamp> TIME_STAMP = createField("time_stamp", org.jooq.impl.SQLDataType.TIMESTAMP.defaulted(true), this, "");
+
+	/**
+	 * The column <code>hg.group.type</code>.
+	 */
+	public final org.jooq.TableField<cn.hg.jooq.tables.records.GroupRecord, cn.hg.constant.ConstantGenerator.Constant> TYPE = createField("type", org.jooq.impl.SQLDataType.TINYINT, this, "", new cn.hg.extend.jooq.ConstantConverter(java.lang.Byte.class, cn.hg.constant.GroupType.class));
+
+	/**
+	 * The column <code>hg.group.sub_type</code>.
+	 */
+	public final org.jooq.TableField<cn.hg.jooq.tables.records.GroupRecord, cn.hg.constant.ConstantGenerator.Constant> SUB_TYPE = createField("sub_type", org.jooq.impl.SQLDataType.TINYINT, this, "", new cn.hg.extend.jooq.ConstantConverter(java.lang.Byte.class, cn.hg.constant.GroupSub_type.class));
 
 	/**
 	 * Create a <code>hg.group</code> table reference

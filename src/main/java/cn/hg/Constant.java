@@ -26,5 +26,7 @@ public class Constant {
 		public static final String RECRUIT_DESCRIPTION = "recruit_description";
 		
 		public static final String MESSAGE_LIST ="message_list";
+		
+		public static final String STRENGTH_MAP = "descript_map";//存放图片描述信息的map
 	}
 }

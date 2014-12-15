@@ -1,6 +1,7 @@
 package cn.hg.controller;
 import static org.springframework.transaction.TransactionDefinition.PROPAGATION_NESTED;
 
+import java.util.HashMap;
 import java.util.List;
 
 import cn.hg.Constant.Param;
@@ -106,9 +107,16 @@ public class ManagerController
         }
         pictureType = PictureType.GENERATOR.getByName(type);
         List<PictureRecord> picture_list = dsl.selectFrom(PICTURE).where(PICTURE.TYPE.eq(pictureType)).and(PICTURE.GROUP_ID.eq(Param.STREGTH_GROUP_ID)).fetchInto(PictureRecord.class);
-       //查询所有栏目
+        HashMap<String,String> descript_map = new HashMap<String,String>();
+        for(PictureRecord record : picture_list)
+        {
+        	//查找对应的描述文字。真tm长
+        	String descript = dsl.select(DESCRIPTION.TEXT).from(DESCRIPTION).where(DESCRIPTION.TYPE.eq(DescriptionType.PICTURE_DESCRIPTION)).and(DESCRIPTION.ID.eq(dsl.select(PICTURE.DESCRIPTION_ID).from(PICTURE).where(PICTURE.ID.eq(record.getId())))).fetchOne(DESCRIPTION.TEXT);
+        	descript_map.put(record.getId()+"", descript);
+        }
+        //查询所有栏目
         List<PictureRecord> picture_bar = dsl.selectFrom(PICTURE).where(PICTURE.GROUP_ID.eq(Param.STREGTH_GROUP_ID)).groupBy(PICTURE.TYPE).orderBy(PICTURE.TYPE).fetchInto(PictureRecord.class);
-        return new ModelAndView("back/strength").addObject(Param.PICTURE_LIST, picture_list).addObject(Param.PICTURE_BAR,picture_bar);
+        return new ModelAndView("back/strength").addObject(Param.PICTURE_LIST, picture_list).addObject(Param.PICTURE_BAR,picture_bar).addObject(Param.STRENGTH_MAP,descript_map);
 	}
 	
 	/*
@@ -160,7 +168,7 @@ public class ManagerController
 		}
 		int id = dsl.insertInto(DESCRIPTION,DESCRIPTION.TEXT , DESCRIPTION.TYPE).values(descriptionContent,DescriptionType.POSITION_DESCRIPTION).returning(DESCRIPTION.ID).fetchOne().getValue(DESCRIPTION.ID);
 		recruitRecord.setDescriptionId(Integer.valueOf(id));
-		dsl.insertInto(RECRUIT,RECRUIT.POSITION,RECRUIT.REQUIRE_COUNT,RECRUIT.ABILITY,RECRUIT.SALARY,RECRUIT.DESCRIPTION_ID).values(recruitRecord.getPosition(),recruitRecord.getRequireCount(),recruitRecord.getAbility(),recruitRecord.getSalary(),recruitRecord.getDescriptionId()).execute();
+		dsl.insertInto(RECRUIT,RECRUIT.POSITION,RECRUIT.REQUIRE_COUNT,RECRUIT.ABILITY,RECRUIT.SALARY,RECRUIT.DESCRIPTION_ID,RECRUIT.APPLY).values(recruitRecord.getPosition(),recruitRecord.getRequireCount(),recruitRecord.getAbility(),recruitRecord.getSalary(),recruitRecord.getDescriptionId(),recruitRecord.getApply()).execute();
 		return new ModelAndView("redirect:/manager/joinus");
 	}
 	
@@ -196,7 +204,7 @@ public class ManagerController
 				try
 				{
 				dsl.update(DESCRIPTION).set(DESCRIPTION.TEXT, descriptionContent).where(DESCRIPTION.ID.eq(recruitRecord.getDescriptionId())).execute();
-				dsl.update(RECRUIT).set(RECRUIT.REQUIRE_COUNT, recruitRecord.getRequireCount()).set(RECRUIT.ABILITY,recruitRecord.getAbility()).set(RECRUIT.SALARY,recruitRecord.getSalary()).where(RECRUIT.ID.eq(recruitRecord.getId())).execute();
+				dsl.update(RECRUIT).set(RECRUIT.REQUIRE_COUNT, recruitRecord.getRequireCount()).set(RECRUIT.ABILITY,recruitRecord.getAbility()).set(RECRUIT.SALARY,recruitRecord.getSalary()).set(RECRUIT.APPLY,recruitRecord.getApply()).where(RECRUIT.ID.eq(recruitRecord.getId())).execute();
 				}catch(Exception e)
 				{
 					manager.rollback(status);
@@ -234,5 +242,67 @@ public class ManagerController
 		}else{
 			recruitRecord.setDescriptionId(null);
 		}
+	}
+	
+	/*
+	 * 修改图片描述信息
+	 */
+	@RequestMapping(value="/update_description",method=RequestMethod.POST)
+	public @ResponseBody String  update_description(final String id,String des_id,final String content)
+	{
+		//如果还没有描述信息，添加
+		if(null==des_id||"".equals(des_id))
+		{
+			final TransactionStatus status = manager.getTransaction(new DefaultTransactionDefinition(PROPAGATION_NESTED));
+			dsl.transaction(new TransactionalRunnable() {
+				
+				@Override
+				public void run(Configuration configuration) throws Exception {
+					// TODO Auto-generated method stub
+					try
+					{
+					int	return_id = 	dsl.insertInto(DESCRIPTION).set(DESCRIPTION.TEXT, content).set(DESCRIPTION.TYPE, DescriptionType.PICTURE_DESCRIPTION).returning(DESCRIPTION.ID).fetchOne().getValue(DESCRIPTION.ID);
+					dsl.update(PICTURE).set(PICTURE.DESCRIPTION_ID, return_id).where(PICTURE.ID.eq(Integer.valueOf(id))).execute();
+					}catch(Exception e)
+					{
+						manager.rollback(status);
+						e.printStackTrace();
+					}
+					}
+			});
+		}else
+		{
+			dsl.update(DESCRIPTION).set(DESCRIPTION.TEXT, content).where(DESCRIPTION.ID.eq(Integer.valueOf(des_id))).and(DESCRIPTION.TYPE.eq(DescriptionType.PICTURE_DESCRIPTION)).execute();
+		}
+		return "success!";
+	}
+	
+	/*
+	 * 删除图片
+	 */
+	@RequestMapping(value="/delete_img",method=RequestMethod.POST)
+	public @ResponseBody String delete_img(final String id)
+	{
+		final TransactionStatus status = manager.getTransaction(new DefaultTransactionDefinition(PROPAGATION_NESTED));
+		dsl.transaction(new TransactionalRunnable() {
+			
+			@Override
+			public void run(Configuration configuration) throws Exception {
+				// TODO Auto-generated method stub
+				try
+				{
+					for(String eid : id.split(","))
+					{
+						dsl.delete(PICTURE).where(PICTURE.ID.eq(Integer.valueOf(eid))).execute();
+					}
+				}catch(Exception e)
+				{
+					manager.rollback(status);
+					e.printStackTrace();
+				}
+				}
+		});
+	
+		return "success!";
 	}
 }

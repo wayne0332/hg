@@ -97,7 +97,7 @@
    							 <div class="form-group">
     						<label for="apply" class="col-sm-2 control-label">如何申请</label>
   							  <div class="col-sm-10">
-     							 <input type="text" class="form-control" id="apply" name="apply"  value="${recruitRecord.apply?if_exists}">
+     							 	 <textarea id="apply" contenteditable="true" name="apply">${recruitRecord.apply?if_exists}</textarea>
    							 </div></div>
    							 
 					</form>
@@ -144,6 +144,7 @@
     });
     CKEDITOR.inline('description_content');
     CKEDITOR.inline('ability');
+    CKEDITOR.inline('apply');
 </script>
 <script>
  function chose_img(id)
@@ -186,6 +187,7 @@
  	window.location("/manager/joinus_add");
  }
  function position_delete(id){
+ if(confirm("确定删除？")){
   	$.ajax({
  	url:"/manager/joinus_delete",
  	type:"post",
@@ -195,6 +197,7 @@
  		save();
  	}
  	});
+ 	}
  }
  function position_update(){
  	$("form").submit();

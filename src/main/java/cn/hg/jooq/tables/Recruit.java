@@ -11,7 +11,7 @@ package cn.hg.jooq.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Recruit extends org.jooq.impl.TableImpl<cn.hg.jooq.tables.records.RecruitRecord> {
 
-	private static final long serialVersionUID = -986580857;
+	private static final long serialVersionUID = 1187276365;
 
 	/**
 	 * The singleton instance of <code>hg.recruit</code>
@@ -49,7 +49,7 @@ public class Recruit extends org.jooq.impl.TableImpl<cn.hg.jooq.tables.records.R
 	/**
 	 * The column <code>hg.recruit.ability</code>.
 	 */
-	public final org.jooq.TableField<cn.hg.jooq.tables.records.RecruitRecord, java.lang.String> ABILITY = createField("ability", org.jooq.impl.SQLDataType.VARCHAR.length(250), this, "");
+	public final org.jooq.TableField<cn.hg.jooq.tables.records.RecruitRecord, java.lang.String> ABILITY = createField("ability", org.jooq.impl.SQLDataType.CLOB.length(65535), this, "");
 
 	/**
 	 * The column <code>hg.recruit.education</code>.
@@ -80,6 +80,11 @@ public class Recruit extends org.jooq.impl.TableImpl<cn.hg.jooq.tables.records.R
 	 * The column <code>hg.recruit.time_stamp</code>.
 	 */
 	public final org.jooq.TableField<cn.hg.jooq.tables.records.RecruitRecord, java.sql.Timestamp> TIME_STAMP = createField("time_stamp", org.jooq.impl.SQLDataType.TIMESTAMP.defaulted(true), this, "");
+
+	/**
+	 * The column <code>hg.recruit.apply</code>.
+	 */
+	public final org.jooq.TableField<cn.hg.jooq.tables.records.RecruitRecord, java.lang.String> APPLY = createField("apply", org.jooq.impl.SQLDataType.VARCHAR.length(1000), this, "");
 
 	/**
 	 * Create a <code>hg.recruit</code> table reference

@@ -173,6 +173,10 @@
         	window.location("/manager/joinus");
  }
  function position_save(id){
+ 	if($("#"+id).val().trim().length==0){
+	alert("名称不能为空！");
+	return false;
+	}
  	$.ajax({
  	url:"/manager/joinus_position",
  	type:"post",

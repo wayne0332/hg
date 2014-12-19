@@ -25,7 +25,7 @@
    	<#list recruit_list as recruit>
 	<li>
 		<div class="text">
-			<h2><a href="/joinus?type=${recruit.id}">${recruit.position}</a></h2>
+			<h2><a href="/joinus?type=${recruit.id?if_exists}">${recruit.position?if_exists}</a></h2>
 		</div>
 	</li>
 	</#list>
@@ -43,31 +43,30 @@
 			</div>
 		
 			<div class="joinus zp_content">
-				<h2>${recruit_record.position}<span>招聘人数&nbsp;${recruit_record.requireCount}人</span></h2>
+				<h2>${recruit_record.position?if_exists}<span>招聘人数&nbsp;${recruit_record.requireCount?if_exists}人</span></h2>
 <#if recruit_description?exists>
 				<h3>	职位描述：</h3>
 <p>
-${recruit_description}
+${recruit_description?if_exists}
 </p>
 </#if>
 <h3>
 	任职条件：
 </h3>
 <p>
-${recruit_record.ability}
+${recruit_record.ability?if_exists}
 </p>
 <h3>
 	待遇：
 </h3>
 <p>
-薪资：${recruit_record.salary}<br/>
+薪资：${recruit_record.salary?if_exists}<br/>
 </p>
 <h3>
 	如何申请：
 </h3>
 <p>
-1.将您的个人简历以电子邮箱的形式发送至xxxx@xxxx.com<br />
-2.简历投递成功后，我们会尽快与您联系。
+${recruit_record.apply?if_exists}
 </p></h3>
 					</div>
 			<!-- joinus zp_content close -->

@@ -2,9 +2,11 @@ package cn.hg.controller;
 
 import cn.hg.Constant.Param;
 import cn.hg.constant.DescriptionType;
+import cn.hg.constant.GroupType;
 import cn.hg.constant.MessageStatus;
 import cn.hg.constant.PictureType;
 import cn.hg.jooq.tables.records.DescriptionRecord;
+import cn.hg.jooq.tables.records.GroupRecord;
 import cn.hg.jooq.tables.records.PictureRecord;
 import cn.hg.jooq.tables.records.RecruitRecord;
 import cn.hg.pojo.Message;
@@ -12,6 +14,7 @@ import cn.hg.pojo.Message;
 import org.jooq.DSLContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,9 +25,13 @@ import javax.annotation.Resource;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import static cn.hg.jooq.tables.Description.DESCRIPTION;
+import static cn.hg.jooq.tables.Group.GROUP;
 import static cn.hg.jooq.tables.Message.MESSAGE;
 import static cn.hg.jooq.tables.Picture.PICTURE;
 import static cn.hg.jooq.tables.Recruit.RECRUIT;
@@ -62,40 +69,44 @@ public class MainController
         return new ModelAndView("fore/aboutus").addObject("description", description);
     }
 
-    @RequestMapping("strength")
-    public ModelAndView strength(String type) 
+    @RequestMapping(value="/img/{t_path}", method = RequestMethod.GET)
+    public ModelAndView strength(Integer type,@PathVariable String t_path) 
     {
-    	PictureType pictureType = null;
-        //默认进入‘钣金车间’
-        if (null == type || "".equals(type)) 
+    	//查询所有栏目
+		List<GroupRecord> group_id_list = null ;
+		if(t_path.equals("strength"))
+		{
+			group_id_list = dsl.selectFrom(GROUP).where(GROUP.NAME.isNotNull()).and(GROUP.NAME.ne("")).and(GROUP.TYPE.eq(GroupType.STRENGTH)).fetchInto(GroupRecord.class);
+		}
+		if(t_path.equals("case"))
+		{
+			group_id_list = dsl.selectFrom(GROUP).where(GROUP.NAME.isNotNull()).and(GROUP.NAME.ne("")).and(GROUP.TYPE.eq(GroupType.CASE)).fetchInto(GroupRecord.class);
+		}
+        Map<String,String> picture_bar = new LinkedHashMap<String,String>();
+        for(GroupRecord groupRecord :group_id_list )
         {
-            type = "ST1";
+        	String name = groupRecord.getName();
+        	if(name!=null&&!name.equals(""))
+        	{
+        		picture_bar.put(groupRecord.getId()+"", name);
+        	}
         }
-        pictureType = PictureType.GENERATOR.getByName(type);
-        List<PictureRecord> picture_list = dsl.selectFrom(PICTURE).where(PICTURE.TYPE.eq(pictureType)).and(PICTURE.GROUP_ID.eq(Param.STREGTH_GROUP_ID)).fetchInto(PictureRecord.class);
-       //查询所有栏目
-        List<PictureRecord> picture_bar = dsl.selectFrom(PICTURE).where(PICTURE.GROUP_ID.eq(Param.STREGTH_GROUP_ID)).groupBy(PICTURE.TYPE).orderBy(PICTURE.TYPE).fetchInto(PictureRecord.class);
-/*        //前台最多显示4张图片
-        if (picture_list.size() > 4) 
+        if (null == type ) 
         {
-            picture_list = picture_list.subList(0, 3);
-        }*/
-        return new ModelAndView("fore/strength").addObject(Param.PICTURE_LIST, picture_list).addObject(Param.PICTURE_BAR,picture_bar);
-    }
-
-    @RequestMapping("case")
-    public ModelAndView cases(String type) {
-        //真实案例，默认进入‘立体发光字工程’
-        if (null == type || "".equals(type))
-        {
-            type = "14";
+            type = Integer.valueOf(picture_bar.keySet().iterator().next());
         }
-        PictureType pictureType = PictureType.GENERATOR.getByIndex(Integer.valueOf(type));
-      
-        List<PictureRecord> picture_list = dsl.selectFrom(PICTURE).where(PICTURE.TYPE.eq(pictureType)).and(PICTURE.GROUP_ID.eq(Param.CASE_GROUP_ID)).fetchInto(PictureRecord.class);
-        return new ModelAndView("fore/case").addObject(Param.PICTURE_LIST, picture_list);
+        List<PictureRecord> picture_list = dsl.selectFrom(PICTURE).where(PICTURE.GROUP_ID.eq(type)).fetchInto(PictureRecord.class);
+        HashMap<String,String> descript_map = new HashMap<String,String>();
+        for(PictureRecord record : picture_list)
+        {
+        	//查找对应的描述文字。
+        	String descript = dsl.select(DESCRIPTION.TEXT).from(DESCRIPTION).where(DESCRIPTION.TYPE.eq(DescriptionType.PICTURE_DESCRIPTION)).and(DESCRIPTION.ID.eq(dsl.select(PICTURE.DESCRIPTION_ID).from(PICTURE).where(PICTURE.ID.eq(record.getId())))).fetchOne(DESCRIPTION.TEXT);
+        	descript_map.put(record.getId()+"", descript==null?"":descript);
+        }
+        return new ModelAndView("fore/strength").addObject(Param.PICTURE_LIST, picture_list).addObject(Param.PICTURE_BAR,picture_bar).addObject(Param.STRENGTH_MAP,descript_map).addObject("img_name",picture_bar.get(type+"")).addObject("i_path",t_path);
+	
     }
-
+   
     @RequestMapping("contact")
     public ModelAndView contact() 
     {

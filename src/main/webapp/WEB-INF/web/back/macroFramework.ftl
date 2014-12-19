@@ -67,8 +67,14 @@
                 <li class="active">
                     <a href="/manager/aboutUs"><i class="glyphicon glyphicon-chevron-right"></i>简介</a>
                 </li>
+                 <li>
+                    <a href="/manager/client"><i class="glyphicon glyphicon-chevron-right"></i> 服务客户 </a>
+                </li>
                 <li>
-                    <a href="/manager/strength"><i class="glyphicon glyphicon-chevron-right"></i> 实力展示 </a>
+                    <a href="/manager/img/strength"><i class="glyphicon glyphicon-chevron-right"></i> 实力展示 </a>
+                </li>
+               <li>
+                    <a href="/manager/img/case"><i class="glyphicon glyphicon-chevron-right"></i> 真实案例 </a>
                 </li>
                <li>
                     <a href="/manager/joinus"><i class="glyphicon glyphicon-chevron-right"></i> 社会招聘 </a>

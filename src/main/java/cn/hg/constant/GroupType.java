@@ -1,7 +1,7 @@
 package cn.hg.constant;
 
 public enum GroupType   implements ConstantGenerator.Constant {
-	INTRODUCE(0, "网站简介"),POSITION_DESCRIPTION(1,"职位描述");
+	STRENGTH(1, "实力展示"),CASE(2,"真实案例");
 	private final int index;
 	private final String name;
 	public static final ConstantGenerator<GroupType> GENERATOR = ConstantGenerator.create(GroupType.class);

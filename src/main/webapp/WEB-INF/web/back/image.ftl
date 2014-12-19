@@ -3,74 +3,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 <head>
-    <title>实力展示</title>
+ <#if t_path=="strength">
+ 	<#assign t_name = "实力展示">
+ </#if>
+  <#if t_path=="case">
+ 	<#assign t_name = "真实案例">
+ </#if>
+    <title>汇海天下-${t_name?if_exists}</title>
     <#assign
  ctx=request.contextPath>
-    <style>
-    	.ui_btn_1{
-    	font-size:15px;
-    	color:white;
-    	width:170px;
-    	height:40px;
-    	background-color:#0099FF;
-    	border:0px;
-    	}
-    	
-    	.ui_inp_1{
-    	font-size:15px;
-    	color:black;
-    	width:170px;
-    	height:40px;
-    	border:1px solid #0099FF;
-    	text-align:center;
-    	}
-    	
-    	.btn_bianji{
-    	background-color:#00FF99;
-    	}
-    	.btn_delete{
-    	background-color:#CCFF00;
-    	}
-    	img{
-    	margin:7px;border:solid 0px #666666;
-    	}
-    	
-    	#leibie_ul div{
-    	margin-top:-9px;
-    	position:relative;
-    	width:170px;
-    	height:40px;
-    	}
-    	
-    	#leibie_ul li{
-    	height:60px;
-    	}
-    	
-    	
-    	.ul_delete{
-    	width:20px;
-    	height:20px;
-    	position:absolute;
-    	top:-17px;
-    	left:151px;
-    	cursor:pointer;
-    	}
-    	 .ul_save{
-    	width:17px;
-    	height:17px;
-    	position:absolute;
-    	top:-17px;
-    	left:-15px;
-    	cursor:pointer;
-    	}
-    </style>
+
+ 
 </head>
 <body>
 <div class="col-md-10">
     <div class="row">
         <div class="col-lg-12">
             <div class="page-header bootstrap-admin-content-title">
-                <h1>实力展示</h1>
+                <h1>${t_name?if_exists}</h1>
             </div>
         </div>
     </div>
@@ -83,28 +33,38 @@
 	<div class="row clearfix">
 		<div class="col-md-2 column" style="position:relative;">
 			<h3 class="muted">
-				部门类别
+				栏目类别
 			</h3>
 			</br>
 			<ul class="list-unstyled" id="leibie_ul">
-			<#list picture_bar as bar>
-			<li>
+			 <#if picture_bar?exists>
+                <#list picture_bar?keys as key> 
+                	<li>
 					<p>
- 						 <button type="button" class="ui_btn_1" onclick="window.location('/manager/strength?type=${bar.type}');">${bar.name}</button>
+ 						 <button type="button" class="ui_btn_1" onclick="window.location('/manager/img/${t_path?if_exists}?type=${key}');">${picture_bar[key]?if_exists}</button>
  						 <div>
- 						 <input type="text" value="${bar.name}" class="ui_inp_1">
- 						 <img src="http://localhost:8080/picture/delete.png"  class="ul_delete">
- 						 <img src="http://localhost:8080/picture/save.png" class="ul_save">
+ 						 <input type="text" value="${picture_bar[key]?if_exists}" class="ui_inp_1" id="${key}">
+ 						 <img src="http://localhost:8080/picture/delete.png"  class="ul_delete" onclick="strength_delete('${key}')">
+ 						 <img src="http://localhost:8080/picture/save.png" class="ul_save" onclick="strength_save('${key}')">
  						 </div>
 					</p>
 				</li>
-			</#list>
+                </#list>
+            </#if>
+               <li>
+					<p>
+ 						 <div>
+ 						 <input id="add_input"  type="text"  class="ui_inp_1"   placeholder="添加部门">
+ 						 <img src="http://localhost:8080/picture/save.png" class="ul_save" onclick="strength_add()">
+ 						 </div>
+					</p>
+				</li>
 			</ul> 
 			<button id="edit_btn" type="button" class="ui_btn_1 btn_bianji" style="top:726px;position:absolute;" onclick="editall();">编辑</button>
-			<button id="save_btn" type="button" class="ui_btn_1 btn_bianji" style="top:726px;position:absolute;" onclick="save();">保存</button>
+			<button id="save_btn" type="button" class="ui_btn_1 btn_bianji" style="left:15px;top:726px;position:absolute;" onclick="save();">保存</button>
 		</div>
 			<h3 class="muted">
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;图片
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${img_name?if_exists}
 			</h3>
 			</br>
 		<div class="col-md-7 column " style="border:0.1px solid #00CC99;height:730px;margin-left:40px;">
@@ -136,7 +96,7 @@
 			
 			<div class="row clearfix"  style="bottom:20px;position:absolute;left:150px;">
 				<div class="col-md-6 column" style="text-align:center;">
-					 <button type="button" class="ui_btn_1 btn_bianji">上传图片</button>
+					 <button type="button" class="ui_btn_1 btn_bianji" onclick="javascript:$('#img_file').click();">上传图片</button>
 				</div>
 				<div class="col-md-6 column" style="text-align:center;">
 					 <button type="button" class="ui_btn_1 btn_delete" onclick="delete_img();">删除</button>
@@ -159,12 +119,17 @@
         </div>
     </div>
 </div>
+<form action="/manager/upload_img?type=${t_path?if_exists}"  method="POST"  enctype="multipart/form-data">
+<input type="file" style="display:none" onchange="upload()" id="img_file" name="file">
+<input type="hidden" value="${img_key?if_exists}" name="pic_type">
+</form>
 <script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 <script>
 $(document).ready(function(){
   $("#leibie_ul div").hide();
   $("#save_btn").hide();
+  $("#add_input").hide();
 });
  function chose_img(id,des_id,type)
  {
@@ -185,6 +150,7 @@ $(document).ready(function(){
   $("#leibie_ul button").hide();
     $("#leibie_ul div").show();
       $("#save_btn").show();
+      $("#add_input").show();
         $("#edit_btn").hide();
  }
  
@@ -192,7 +158,9 @@ $(document).ready(function(){
    $("#leibie_ul div").hide();
     $("#leibie_ul button").show();
       $("#save_btn").hide();
+      $("#add_input").hide();
         $("#edit_btn").show();
+        window.location("/manager/img/${t_path?if_exists}");
  }
  function update_des(){
  if($("#update_pic_id").val()==""){
@@ -209,7 +177,7 @@ $(document).ready(function(){
  	data:{"id":$("#update_pic_id").val(),"des_id":$("#update_des_id").val(),"content":$("#apply").val()},
  	success:function(data){
  		alert(data);
- 		window.location("/manager/strength?type="+$("#update_str_type").val());
+ 		window.location("/manager/img/${t_path?if_exists}?type=<#if picture_list?size!=0>${picture_list[0].groupId?if_exists}</#if>");
  	}
  	});
  }
@@ -234,11 +202,61 @@ $(document).ready(function(){
  	data:{"id":str},
  	success:function(data){
  		alert(data);
- 		window.location("/manager/strength?type="+$("#update_str_type").val());
+ 		window.location("/manager/img/${t_path?if_exists}?type=${img_key}");
  	}
  	});
  	}
  }
+ function upload(){
+		$("form").submit();
+ }
+ 
+   function strength_delete(id){
+		 if(confirm("确定删除？")){
+  			$.ajax({
+ 			url:"/manager/strength_update",
+ 			type:"post",
+		 	data:{"id":id},
+ 			success:function(data){
+ 				alert(data);
+ 				save();
+ 		}
+ 		});
+	 	}
+	 }
+ 
+  function strength_save(id){
+	if($("#"+id).val().trim().length==0){
+	alert("名称不能为空！");
+	return false;
+	}
+ 	$.ajax({
+ 	url:"/manager/strength_update",
+ 	type:"post",
+ 	data:{"id":id,"value":$("#"+id).val()},
+ 	success:function(data){
+ 		alert(data);
+ 		save();
+ 	}
+ 	});
+ }
+ 
+ function strength_add(){
+ if($("#add_input").val().trim().length==0){
+ 	alert("名称不能为空！");
+ 	return false;
+ }
+  	$.ajax({
+ 	url:"/manager/img_add/${t_path?if_exists}",
+ 	type:"post",
+ 	data:{"name":$("#add_input").val()},
+ 	success:function(data){
+ 		alert(data);
+ 		save();
+ 	}
+ 	});
+ }
+
 </script>
 </body>
 </html>
